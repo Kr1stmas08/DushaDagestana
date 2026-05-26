@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Народы Дагестана — аварцы, даргинцы, лезгины, кумыки, лакцы и другие. Узнайте о языках, культуре и истории более 60 народов.">
+    <meta name="keywords" content="народы Дагестана, аварцы, даргинцы, лезгины, кумыки, лакцы, табасаранцы, этносы">
+    <meta name="author" content="Душа Дагестана">
+    <meta property="og:title" content="Народы Дагестана — Душа Дагестана">
+    <meta property="og:description" content="Народы Дагестана — аварцы, даргинцы, лезгины, кумыки, лакцы и другие. Узнайте о языках, культуре и истории более 60 народов.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z' fill='%23D4AF37'/></svg>">
+    <title>Народы Дагестана — Душа Дагестана</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --emerald: #2C5F4F;
+            --emerald-dark: #1a3d32;
+            --gold: #D4AF37;
+            --gold-light: #e8c85a;
+            --stone: #E8DCC4;
+            --terracotta: #B85042;
+            --night: #0A1128;
+            --night-light: #151d3b;
+            --cream: #FAF7F2;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-accent: 'Playfair Display', serif;
+            
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0.8rem 5%;
+            background: rgba(10, 17, 40, 0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212,175,55,0.25);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--gold);
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212,175,55,0.2);
+        }
+
+        .logo-text span { color: var(--gold); }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.75);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 0;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover { color: var(--gold); }
+        .nav-menu a:hover::after { width: 100%; }
+        .nav-menu a.active { color: var(--gold); }
+        .nav-menu a.active::after { width: 100%; }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            outline: none;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition-fast);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .page-header {
+            padding: 160px 5% 100px;
+            text-align: center;
+            background: 
+                linear-gradient(135deg, rgba(10,17,40,0.88) 0%, rgba(44,95,79,0.85) 100%),
+                url('images/hero-bg.jpg') center/cover fixed;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.15) 0%, transparent 60%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='%23D4AF37' fill-opacity='0.03'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            animation: pattern-move 30s linear infinite;
+        }
+
+        @keyframes pattern-move {
+            from { transform: translateX(0); }
+            to { transform: translateX(60px); }
+        }
+
+        .page-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 24px;
+            position: relative;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .page-header h1 span { 
+            color: var(--gold);
+            display: inline-block;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+            50% { text-shadow: 0 0 30px rgba(212,175,55,0.8); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            position: relative;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .page-header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            position: relative;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .stat-box:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(212,175,55,0.3);
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+            margin-bottom: 12px;
+            text-shadow: 0 0 25px rgba(212,175,55,0.3);
+        }
+
+        .stat-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .intro-section {
+            padding: 100px 5%;
+            background: 
+                linear-gradient(135deg, rgba(250,247,242,0.98) 0%, rgba(232,220,196,0.95) 100%),
+                url('images/senction-intro.jpg') center/cover fixed;
+            position: relative;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(44,95,79,0.02) 35px,
+                rgba(44,95,79,0.02) 70px
+            );
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+
+        .intro-quote {
+            margin: 50px 0;
+            padding: 40px;
+            background: rgba(255,255,255,0.95);
+            border-left: 5px solid var(--emerald);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--emerald);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .intro-quote cite {
+            display: block;
+            margin-top: 16px;
+            font-size: 1rem;
+            color: #888;
+            font-style: normal;
+        }
+
+        .language-families {
+            padding: 100px 5%;
+            background: 
+                linear-gradient(135deg, rgba(10,17,40,0.92) 0%, rgba(26,61,50,0.88) 100%),
+                url('images/languages-bg.jpg') center/cover fixed;
+            color: var(--white);
+            position: relative;
+        }
+
+        .language-families::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(212,175,55,0.1) 0%, transparent 50%);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 700px;
+            margin: -50px auto 70px;
+        }
+
+        .families-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .family-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition-normal);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .family-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 60%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .family-card:hover::before {
+            transform: scale(1);
+        }
+
+        .family-card:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .family-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.4);
+            position: relative;
+        }
+
+        .family-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .family-card .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .family-card p {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .language-tag {
+            padding: 6px 14px;
+            background: rgba(212,175,55,0.2);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            transition: var(--transition-fast);
+        }
+
+        .language-tag:hover {
+            background: var(--gold);
+            color: var(--night);
+            transform: scale(1.05);
+        }
+
+        .peoples-section {
+            padding: 100px 5%;
+            background: 
+                linear-gradient(135deg, rgba(232,220,196,0.95) 0%, rgba(250,247,242,0.9) 100%),
+                url('images/peoples-bg.jpg') center/cover fixed;
+            position: relative;
+        }
+
+        .peoples-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40L40 0z' fill='%232C5F4F' fill-opacity='0.03'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+        }
+
+        .peoples-section .section-title {
+            color: var(--night);
+        }
+
+        .peoples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .people-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .people-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+        }
+
+        .people-card-header {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .people-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .people-card:hover .people-card-image {
+            transform: scale(1.15);
+        }
+
+        .people-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,17,40,0.95) 0%, transparent 60%);
+        }
+
+        .people-card-title {
+            position: absolute;
+            bottom: 24px;
+            left: 28px;
+            right: 28px;
+            color: var(--white);
+        }
+
+        .people-card-title h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .people-card-title span {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            display: block;
+        }
+
+        .people-card-body {
+            padding: 35px 30px;
+        }
+
+        .people-card-body p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .people-features {
+            display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+        }
+
+        .feature-item {
+            display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    background: var(--stone);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+        }
+
+        .feature-item:hover {
+            background: var(--emerald);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .feature-item i {
+            color: var(--emerald);
+            font-size: 1.2rem;
+            transition: var(--transition-fast);
+        }
+
+        .feature-item:hover i {
+            color: var(--gold);
+        }
+
+        .feature-item span {
+            font-size: 0.82rem;
+    color: #666;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
+        }
+
+        .feature-item:hover span {
+            color: var(--white);
+        }
+
+        .unity-section {
+            padding: 100px 5%;
+            background: 
+                linear-gradient(135deg, rgba(44,95,79,0.92) 0%, rgba(26,61,50,0.88) 100%),
+                url('images/unity-bg.jpg') center/cover fixed;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .unity-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 60%);
+        }
+
+        .unity-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .unity-icon {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .unity-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .unity-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .unity-feature {
+            padding: 30px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+        }
+
+        .unity-feature:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .unity-feature i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .unity-feature h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .unity-feature p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        .map-section {
+            padding: 100px 5%;
+            background: 
+                linear-gradient(135deg, rgba(10,17,40,0.95) 0%, rgba(21,29,59,0.92) 100%),
+                url('images/peoples-bg.jpg') center/cover fixed;
+            color: var(--white);
+            position: relative;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(212,175,55,0.03) 2px,
+                rgba(212,175,55,0.03) 4px
+            );
+        }
+
+        .map-section .section-title {
+            color: var(--white);
+            position: relative;
+        }
+
+        .map-subtitle {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .map-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            position: relative;
+        }
+
+        .map-container {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            position: relative;
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
+        }
+
+        .map-svg-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1.05;
+            position: relative;
+        }
+
+        .map-svg-wrap svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-region {
+            fill: rgba(44,95,79,0.35);
+            stroke: rgba(212,175,55,0.4);
+            stroke-width: 1;
+            cursor: pointer;
+            transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+        }
+
+        .map-region:hover {
+            fill: rgba(212,175,55,0.3);
+            stroke: var(--gold);
+            stroke-width: 1.8;
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+        }
+
+        .map-region.active {
+            fill: rgba(212,175,55,0.45);
+            stroke: var(--gold);
+            stroke-width: 2;
+            filter: drop-shadow(0 0 12px rgba(212,175,55,0.6));
+        }
+
+        .map-label {
+            fill: rgba(255,255,255,0.8);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            font-weight: 600;
+            pointer-events: none;
+            text-anchor: middle;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .map-dot {
+            fill: var(--gold);
+            r: 3.5;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .map-dot-pulse {
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 1;
+            r: 3.5;
+            opacity: 0;
+            pointer-events: none;
+            animation: dotPulse 2.5s ease-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0% { r: 3.5; opacity: 0.6; }
+            100% { r: 14; opacity: 0; }
+        }
+
+        .map-info-panel {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            align-self: start;
+            position: sticky;
+            top: 100px;
+        }
+
+        .map-info-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
+        }
+
+        .map-info-default {
+            text-align: center;
+            padding: 40px 10px;
+        }
+
+        .map-info-default i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            opacity: 0.5;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .map-info-default p {
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .map-info-content {
+            display: none;
+        }
+
+        .map-info-content.visible {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .map-info-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .map-info-self {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .map-info-divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 16px 0;
+            opacity: 0.3;
+        }
+
+        .map-info-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .map-info-stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .map-info-stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .map-info-stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .map-info-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .map-info-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .map-info-tag {
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.25);
+            color: var(--gold);
+            font-size: 0.72rem;
+            padding: 5px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .map-legend {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .map-legend-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 12px;
+        }
+
+        .map-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            padding: 4px 0;
+            transition: color 0.2s ease;
+        }
+
+        .map-legend-item:hover {
+            color: var(--gold);
+        }
+
+        .map-legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            border: 1px solid rgba(255,255,255,0.15);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 992px) {
+            .map-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .map-info-panel {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .map-container {
+                padding: 15px;
+            }
+            .map-label {
+                font-size: 9px;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        footer {
+            background: #050810;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(212,175,55,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white, #fff);
+            transition: 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--gold, #D4AF37);
+            border-color: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+        }
+
+        .footer-column h4 {
+            color: var(--white, #fff);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.6);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            transition: 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold, #D4AF37);
+            padding-left: 5px;
+        }
+
+        .footer-subscribe input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white, #fff);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe input:focus {
+            outline: none;
+            border-color: var(--gold, #D4AF37);
+        }
+
+        .footer-subscribe input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-subscribe button {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold, #D4AF37);
+            border: none;
+            border-radius: 8px;
+            color: var(--night, #0A1128);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe button:hover {
+            background: var(--gold-light, #e8c85a);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        .subscribe-msg {
+            color: #e8c85a;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--night);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right var(--transition-normal);
+                border-left: 1px solid rgba(212,175,55,0.15);
+                z-index: 999;
+            }
+
+            .nav-menu.active { right: 0; }
+            .nav-toggle { display: flex; }
+
+            .page-header .stats {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .peoples-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .unity-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-header .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .stat-box {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2.8rem;
+            }
+
+            .people-features {
+                grid-template-columns: 1fr;
+            }
+
+            .families-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            padding: 12px 24px;
+            z-index: 10001;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            border-radius: 0 0 8px 8px;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--gold-light, #e8c85a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold, #D4AF37), var(--gold-light, #e8c85a));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: var(--night, #0A1128);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            pointer-events: none;
+        }
+        .page-transition.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .back-to-top { transition: none; }
+            .page-transition { transition: none; }
+        }
+
+        @media print {
+            .navbar, .back-to-top, .scroll-progress, .page-transition,
+            .preloader, .hero-scroll, .skip-link, .footer-social,
+            .footer-subscribe, .nav-toggle { display: none !important; }
+            body { background: #fff; color: #000; font-size: 12pt; }
+            footer { background: #fff; color: #333; border-top: 1px solid #ccc; padding: 20px 0; }
+            footer a { color: #333; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+            .culture-card, .story-image img, img { break-inside: avoid; }
+        }
+
+        .logo {
+            position: relative;
+        }
+        .logo-text {
+            transition: all 0.3s ease;
+        }
+        .logo:hover .logo-text {
+            text-shadow: 0 0 30px rgba(212,175,55,0.6), 0 0 60px rgba(212,175,55,0.2);
+        }
+        .logo:hover .logo-icon {
+            filter: drop-shadow(0 0 12px rgba(212,175,55,0.8));
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5) 20%, rgba(212,175,55,0.8) 50%, rgba(212,175,55,0.5) 80%, transparent);
+            opacity: 0.6;
+        }
+
+        ::selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+        ::-moz-selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--night, #0A1128);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold, #D4AF37), var(--emerald, #2C5F4F));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--gold-light, #e8c85a), var(--emerald, #2C5F4F));
+        }
+        html {
+            scrollbar-color: var(--gold, #D4AF37) var(--night, #0A1128);
+            scrollbar-width: thin;
+        }
+
+        .stat-number, .hero-stat-number {
+            position: relative;
+        }
+        @keyframes statGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(212,175,55,0.3); }
+            50% { text-shadow: 0 0 40px rgba(212,175,55,0.6), 0 0 80px rgba(212,175,55,0.2); }
+        }
+        .stat-number:hover, .hero-stat-number:hover {
+            animation: statGlow 2s ease-in-out infinite;
+        }
+
+        .story-quote::before,
+        .intro-quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--gold, #D4AF37);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37) 30%, var(--gold, #D4AF37) 70%, transparent);
+        }
+        footer::after {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold, #D4AF37);
+            font-size: 0.7rem;
+            background: #050810;
+            padding: 0 12px;
+        }
+        footer {
+            position: relative;
+        }
+
+        .footer-column a {
+            position: relative;
+            display: inline-block;
+        }
+        .footer-column a::before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            color: var(--gold, #D4AF37);
+            transition: all 0.2s ease;
+            font-size: 0.8em;
+        }
+        .footer-column a:hover::before {
+            opacity: 1;
+            left: -18px;
+        }
+
+        .story-image img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
+        }
+        .story-image:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05) contrast(1.02);
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            gap: 20px;
+            opacity: 0.5;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            max-width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37));
+        }
+        .section-divider::after {
+            background: linear-gradient(90deg, var(--gold, #D4AF37), transparent);
+        }
+        .section-divider svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold, #D4AF37);
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
+        <div class="page-transition" id="pageTransition"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Основная навигация">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40">
+                    <path d="M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z"/>
+                </svg>
+                <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="peoples.html" class="active">Народы</a></li>
+                <li><a href="traditions.html">Традиции</a></li>
+                <li><a href="cuisine.html">Кухня</a></li>
+                <li><a href="crafts.html">Ремёсла</a></li>
+                <li><a href="music.html">Музыка</a></li>
+                <li><a href="vr-tour.html">VR-тур</a></li>
+                <li><a href="sound-map.html">Квиз</a></li>
+                <li><a href="gallery.html">Маршруты</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main role="main">
+    
+    <header class="page-header">
+        <h1>Народы <span>Дагестана</span></h1>
+        <p>Земля, где каждое ущелье говорит на своём языке, а гостеприимство объединяет всех</p>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-number">60+</span>
+                <span class="stat-label">Народов</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Языков</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Языковые семьи</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="intro-content fade-in-up">
+            <p>
+                Дагестан — это уникальный регион, где на относительно небольшой территории проживает 
+                более 60 народов и этнических групп. Каждый народ бережно хранит свой язык, традиции, 
+                обычаи и культуру, передавая их из поколения в поколение.
+            </p>
+            <p>
+                Многовековое соседство научило народы Дагестана взаимоуважению и толерантности. 
+                Здесь никогда не было национальной или религиозной розни — горы и общая история 
+                сплотили людей крепче любых границ.
+            </p>
+
+            <div class="intro-quote">
+                <p>«Если ты выстрелишь в Дагестане, эхо ответит тебе на тридцати языках»</p>
+                <cite>— Расул Гамзатов, народный поэт Дагестана</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="language-families">
+        <h2 class="section-title">Языковое разнообразие</h2>
+        <p class="section-subtitle">Три великие языковые семьи сплелись в мозаику дагестанской культуры</p>
+        
+        <div class="families-grid">
+            <div class="family-card fade-in-up">
+                <div class="family-icon">🗣️</div>
+                <h3>Нахско-дагестанские</h3>
+                <p class="subtitle">Древнейшие языки Кавказа</p>
+                <p>
+                    Автохтонные языки, формировавшиеся тысячелетиями в горных ущельях. 
+                    Отличаются сложной фонетикой и уникальной грамматикой.
+                </p>
+                <div class="languages-list">
+                    <span class="language-tag">Аварский</span>
+                    <span class="language-tag">Даргинский</span>
+                    <span class="language-tag">Лезгинский</span>
+                    <span class="language-tag">Лакский</span>
+                    <span class="language-tag">Табасаранский</span>
+                    <span class="language-tag">Цахурский</span>
+                </div>
+            </div>
+
+            <div class="family-card fade-in-up">
+                <div class="family-icon">🐴</div>
+                <h3>Тюркские</h3>
+                <p class="subtitle">Языки степных народов</p>
+                <p>
+                    Пришли с тюркскими племенами, связывавшими горы и степи. 
+                    Близки к азербайджанскому и турецкому языкам.
+                </p>
+                <div class="languages-list">
+                    <span class="language-tag">Кумыкский</span>
+                    <span class="language-tag">Ногайский</span>
+                    <span class="language-tag">Азербайджанский</span>
+                </div>
+            </div>
+
+            <div class="family-card fade-in-up">
+                <div class="family-icon">📖</div>
+                <h3>Индоевропейские</h3>
+                <p class="subtitle">Языки мировой семьи</p>
+                <p>
+                    Русский язык стал lingua franca Дагестана, объединяющим все народы. 
+                    На нём создана богатая дагестанская литература.
+                </p>
+                <div class="languages-list">
+                    <span class="language-tag">Русский</span>
+                    <span class="language-tag">Татский</span>
+                    <span class="language-tag">Горско-еврейский</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="peoples-section">
+        <h2 class="section-title">Крупнейшие народы</h2>
+        
+        <div class="peoples-grid">
+            
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/avar.jpg" alt="Аварцы" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Аварцы</h3>
+                        <span>Маарулал • Самый многочисленный народ</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Аварцы (самоназвание — маарулал) составляют около 30% населения Дагестана. 
+                        Проживают преимущественно в горных районах. Известны как искусные строители, 
+                        воины и поэты. Аварский язык относится к нахско-дагестанской семье.
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~950 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Горные районы</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Аварский язык</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mosque"></i>
+                            <span>Ислам (суннизм)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/dargin.jpg" alt="Изображение" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Даргинцы</h3>
+                        <span>Дарган • Народ мастеров</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Даргинцы — второй по численности народ Дагестана. Славятся своими ремёслами, 
+                        особенно обработкой металла и ювелирным делом. Село Кубачи, населённое даргинцами, 
+                        известно на весь мир своими серебряными изделиями.
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~600 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Центральный Дагестан</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Даргинский язык</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-gem"></i>
+                            <span>Мастера-ювелиры</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/lezgin.jpg" alt="Лезгины" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Лезгины</h3>
+                        <span>Лекь • Хранители танца</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Лезгины — один из древнейших народов Кавказа. Именно от их названия произошло 
+                        слово «лезгинка» — знаменитый кавказский танец. Лезгины известны своим 
+                        гостеприимством, отвагой и строгим соблюдением адата (кодекса чести).
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~470 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Южный Дагестан</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Лезгинский язык</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-music"></i>
+                            <span>Танец лезгинка</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/kumyk.jpg" alt="Кумыки" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Кумыки</h3>
+                        <span>Къумукълар • Степной народ</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Кумыки — тюркский народ, проживающий на равнине. Исторически были связующим 
+                        звеном между горцами и степными народами. Обладают богатой литературной традицией, 
+                        первые письменные памятники датируются XVII веком.
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~500 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Равнинный Дагестан</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Кумыкский (тюркский)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-book"></i>
+                            <span>Богатая литература</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/lak.jpg" alt="Лакцы" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Лакцы</h3>
+                        <span>Лак • Народ учёных</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Лакцы компактно проживают в центральной части горного Дагестана. Славятся 
+                        высоким уровнем грамотности и тягой к знаниям. В советское время лакцы дали 
+                        Дагестану множество учёных, врачей и педагогов.
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~200 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Лакский район</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Лакский язык</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Высокая грамотность</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="people-card fade-in-up">
+                <div class="people-card-header">
+                    <img loading="lazy" src="images/tabasaran.jpg" alt="Табасараны" class="people-card-image">
+                    <div class="people-card-overlay"></div>
+                    <div class="people-card-title">
+                        <h3>Табасараны</h3>
+                        <span>Табасаран • Мастера ковра</span>
+                    </div>
+                </div>
+                <div class="people-card-body">
+                    <p>
+                        Табасараны — народ, прославившийся своим ковроткачеством. Табасаранские ковры 
+                        занесены в Книгу рекордов Гиннесса как самые сложные по орнаменту в мире. 
+                        Их язык также считается одним из самых сложных.
+                    </p>
+                    <div class="people-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>~150 тыс. чел.</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Табасаранский район</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-language"></i>
+                            <span>Табасаранский</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Ковроткачество</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="unity-section">
+        <div class="unity-content">
+            <i class="fas fa-hands-helping unity-icon"></i>
+            <h2 class="section-title">Единство в многообразии</h2>
+            <p class="unity-text">
+                Дагестан — это живой пример того, как разные народы могут жить в мире и гармонии, 
+                сохраняя свою уникальность и взаимно обогащая друг друга.
+            </p>
+            
+            <div class="unity-features">
+                <div class="unity-feature fade-in-up">
+                    <i class="fas fa-heart"></i>
+                    <h4>Взаимоуважение</h4>
+                    <p>Вековые традиции толерантности и уважения к соседям</p>
+                </div>
+                <div class="unity-feature fade-in-up">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Гостеприимство</h4>
+                    <p>Гость священен независимо от национальности</p>
+                </div>
+                <div class="unity-feature fade-in-up">
+                    <i class="fas fa-book-open"></i>
+                    <h4>Культурный обмен</h4>
+                    <p>Народы обогащают друг друга традициями</p>
+                </div>
+                <div class="unity-feature fade-in-up">
+                    <i class="fas fa-peace"></i>
+                    <h4>Мирное сосуществование</h4>
+                    <p>Никогда не было межнациональных конфликтов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 class="section-title">Этническая карта Дагестана</h2>
+        <p class="map-subtitle">Нажмите на регион, чтобы узнать о населяющем его народе</p>
+        
+        <div class="map-wrapper">
+            <div class="map-container">
+                <div class="map-svg-wrap">
+                    <svg viewBox="0 0 500 520" xmlns="http://www.w3.org/2000/svg" id="dagMap">
+                        
+                        <path class="map-region" id="reg-avar" d="M140,80 L220,60 L300,75 L320,130 L310,200 L260,240 L200,250 L150,220 L120,160 L130,110 Z"/>
+                        <circle class="map-dot-pulse" cx="215" cy="155" data-region="reg-avar"/>
+                        <circle class="map-dot" cx="215" cy="155"/>
+                        <text class="map-label" x="215" y="145">Аварцы</text>
+
+                        <path class="map-region" id="reg-dargin" d="M260,240 L310,200 L350,220 L370,280 L340,340 L290,330 L250,290 Z"/>
+                        <circle class="map-dot-pulse" cx="305" cy="275" data-region="reg-dargin"/>
+                        <circle class="map-dot" cx="305" cy="275"/>
+                        <text class="map-label" x="305" y="268">Даргинцы</text>
+
+                        <path class="map-region" id="reg-lezgin" d="M200,390 L270,360 L340,380 L380,430 L360,480 L280,500 L210,480 L180,440 Z"/>
+                        <circle class="map-dot-pulse" cx="280" cy="435" data-region="reg-lezgin"/>
+                        <circle class="map-dot" cx="280" cy="435"/>
+                        <text class="map-label" x="280" y="428">Лезгины</text>
+
+                        <path class="map-region" id="reg-kumyk" d="M350,100 L420,80 L470,130 L480,220 L460,300 L370,280 L350,220 L320,130 Z"/>
+                        <circle class="map-dot-pulse" cx="410" cy="190" data-region="reg-kumyk"/>
+                        <circle class="map-dot" cx="410" cy="190"/>
+                        <text class="map-label" x="408" y="183">Кумыки</text>
+
+                        <path class="map-region" id="reg-lak" d="M200,250 L260,240 L250,290 L230,310 L190,300 L180,270 Z"/>
+                        <circle class="map-dot-pulse" cx="218" cy="275" data-region="reg-lak"/>
+                        <circle class="map-dot" cx="218" cy="275"/>
+                        <text class="map-label" x="218" y="268">Лакцы</text>
+
+                        <path class="map-region" id="reg-tabasaran" d="M340,340 L370,280 L460,300 L470,370 L440,410 L380,430 L340,380 Z"/>
+                        <circle class="map-dot-pulse" cx="400" cy="355" data-region="reg-tabasaran"/>
+                        <circle class="map-dot" cx="400" cy="355"/>
+                        <text class="map-label" x="398" y="348">Табасаранцы</text>
+
+                        <path class="map-region" id="reg-nogay" d="M60,20 L220,10 L350,30 L350,100 L220,60 L140,80 L80,60 Z"/>
+                        <circle class="map-dot-pulse" cx="210" cy="45" data-region="reg-nogay"/>
+                        <circle class="map-dot" cx="210" cy="45"/>
+                        <text class="map-label" x="210" y="38">Ногайцы</text>
+
+                        <path class="map-region" id="reg-agul" d="M230,310 L290,330 L270,360 L200,390 L180,360 L190,330 Z"/>
+                        <circle class="map-dot-pulse" cx="230" cy="350" data-region="reg-agul"/>
+                        <circle class="map-dot" cx="230" cy="350"/>
+                        <text class="map-label" x="230" y="344">Агулы</text>
+
+                        <path class="map-region" id="reg-rutul" d="M100,320 L190,300 L180,360 L200,390 L160,420 L90,400 L70,360 Z"/>
+                        <circle class="map-dot-pulse" cx="140" cy="365" data-region="reg-rutul"/>
+                        <circle class="map-dot" cx="140" cy="365"/>
+                        <text class="map-label" x="140" y="358">Рутульцы</text>
+
+                        <path class="map-region" id="reg-tsahur" d="M60,400 L90,400 L160,420 L150,470 L100,490 L50,460 Z"/>
+                        <circle class="map-dot-pulse" cx="105" cy="445" data-region="reg-tsahur"/>
+                        <circle class="map-dot" cx="105" cy="445"/>
+                        <text class="map-label" x="105" y="438">Цахуры</text>
+
+                        <path class="map-region" id="reg-andi" d="M40,80 L80,60 L140,80 L130,110 L120,160 L80,170 L40,140 Z"/>
+                        <circle class="map-dot-pulse" cx="90" cy="120" data-region="reg-andi"/>
+                        <circle class="map-dot" cx="90" cy="120"/>
+                        <text class="map-label" x="90" y="113">Андийцы</text>
+
+                        <path class="map-region" id="reg-chechen" d="M30,30 L60,20 L80,60 L40,80 L20,60 Z"/>
+                        <circle class="map-dot-pulse" cx="48" cy="50" data-region="reg-chechen"/>
+                        <circle class="map-dot" cx="48" cy="50"/>
+                        <text class="map-label" x="48" y="43" style="font-size:9px">Аккинцы</text>
+
+                        <path d="M470,130 L500,100 L500,520 L280,520 L280,500 L360,480 L380,430 L440,410 L470,370 L460,300 L480,220 Z" 
+                              fill="rgba(44,130,180,0.12)" stroke="rgba(44,130,180,0.25)" stroke-width="1" pointer-events="none"/>
+                        <text x="488" y="420" fill="rgba(44,130,180,0.4)" font-size="12" font-style="italic" text-anchor="middle" 
+                              transform="rotate(-80,488,420)" font-family="'Playfair Display',serif">Каспийское море</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="map-info-panel" id="mapInfoPanel">
+                <div class="map-info-default" id="mapDefault">
+                    <i class="fas fa-hand-pointer"></i>
+                    <p>Выберите регион на карте, чтобы узнать о народе</p>
+                </div>
+                <div class="map-info-content" id="mapInfo">
+                    <div class="map-info-name" id="mapName"></div>
+                    <div class="map-info-self" id="mapSelf"></div>
+                    <div class="map-info-divider"></div>
+                    <div class="map-info-stats" id="mapStats"></div>
+                    <p class="map-info-desc" id="mapDesc"></p>
+                    <div class="map-info-tags" id="mapTags"></div>
+                </div>
+
+                <div class="map-legend">
+                    <div class="map-legend-title">Народы по численности</div>
+                    <div class="map-legend-item" data-region="reg-avar"><span class="map-legend-color" style="background:rgba(212,175,55,0.5)"></span> Аварцы — 29.4%</div>
+                    <div class="map-legend-item" data-region="reg-dargin"><span class="map-legend-color" style="background:rgba(44,95,79,0.6)"></span> Даргинцы — 17%</div>
+                    <div class="map-legend-item" data-region="reg-kumyk"><span class="map-legend-color" style="background:rgba(184,80,66,0.5)"></span> Кумыки — 14.9%</div>
+                    <div class="map-legend-item" data-region="reg-lezgin"><span class="map-legend-color" style="background:rgba(100,100,200,0.5)"></span> Лезгины — 13.3%</div>
+                    <div class="map-legend-item" data-region="reg-lak"><span class="map-legend-color" style="background:rgba(160,120,55,0.5)"></span> Лакцы — 5.6%</div>
+                    <div class="map-legend-item" data-region="reg-tabasaran"><span class="map-legend-color" style="background:rgba(80,150,120,0.5)"></span> Табасаранцы — 4.5%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+                    </a>
+                    <p>
+                        Культурно-просветительский портал о традициях, обычаях 
+                        и наследии народов Дагестана. Сохраняем прошлое, 
+                        вдохновляем будущее.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="peoples.html">Народы</a></li>
+                        <li><a href="traditions.html">Традиции</a></li>
+                        <li><a href="cuisine.html">Кухня</a></li>
+                        <li><a href="crafts.html">Ремёсла</a></li>
+                        <li><a href="music.html">Музыка</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Интерактив</h4>
+                    <ul>
+                        <li><a href="vr-tour.html">VR-тур 360°</a></li>
+                        <li><a href="sound-map.html">Квиз</a></li>
+                        <li><a href="gallery.html">Маршруты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Подписка</h4>
+                    <form class="footer-subscribe" id="subscribeForm">
+                        <input type="email" placeholder="Ваш email" required aria-label="Email для подписки">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                    <p class="subscribe-msg" id="subscribeMsg" style="display:none;"></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Душа Дагестана. Все права защищены.</p>
+                <p>Сделано с любовью к культуре Кавказа</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        
+        const subForm = document.getElementById('subscribeForm');
+        if (subForm) {
+            subForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                const msg = document.getElementById('subscribeMsg');
+                if (msg) {
+                    msg.textContent = 'Спасибо за подписку! (' + email + ')';
+                    msg.style.display = 'block';
+                }
+                this.querySelector('input[type="email"]').value = '';
+            });
+        }
+    </script>
+
+    <script>
+        
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        const scrollProgress = document.getElementById('scrollProgress');
+        if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollProgress.style.width = scrollPercent + '%';
+            });
+        }
+
+        const pageTransition = document.getElementById('pageTransition');
+        if (pageTransition) {
+            document.querySelectorAll('a[href]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (!href || href.startsWith('#') || href.startsWith('javascript') || href.startsWith('mailto')) return;
+                    e.preventDefault();
+                    pageTransition.classList.add('active');
+                    setTimeout(() => { window.location.href = href; }, 400);
+                });
+            });
+            
+            window.addEventListener('pageshow', () => {
+                pageTransition.classList.remove('active');
+            });
+        }
+
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
+
+    <script>
+    (function() {
+        const mapData = {
+            'reg-avar': {
+                name: 'Аварцы',
+                self: 'Маарулал',
+                pop: '~950 тыс.',
+                percent: '29.4%',
+                region: 'Горные районы',
+                lang: 'Аварский',
+                desc: 'Крупнейший народ Дагестана. Проживают в высокогорных районах центральной части. Известны боевыми традициями, поэзией и искусством строительства горных аулов. Родина Расула Гамзатова и имама Шамиля.',
+                tags: ['Горы', 'Поэзия', 'Зодчество', 'Имамат'],
+                color: 'rgba(212,175,55,0.5)'
+            },
+            'reg-dargin': {
+                name: 'Даргинцы',
+                self: 'Дарган',
+                pop: '~590 тыс.',
+                percent: '17%',
+                region: 'Центральный Дагестан',
+                lang: 'Даргинский',
+                desc: 'Второй по численности народ. Населяют предгорья и горные районы центральной части. Славятся златокузнечеством, резьбой по камню и дереву. Кубачи — их знаменитое село мастеров.',
+                tags: ['Златокузнечество', 'Кубачи', 'Резьба'],
+                color: 'rgba(44,95,79,0.6)'
+            },
+            'reg-lezgin': {
+                name: 'Лезгины',
+                self: 'Лезгияр',
+                pop: '~474 тыс.',
+                percent: '13.3%',
+                region: 'Южный Дагестан',
+                lang: 'Лезгинский',
+                desc: 'Один из древнейших народов Кавказа. Населяют южную часть Дагестана. Знамениты танцем лезгинка, который стал визитной карточкой всего Кавказа. Развита культура ковроткачества.',
+                tags: ['Лезгинка', 'Ковры', 'Дербент'],
+                color: 'rgba(100,100,200,0.5)'
+            },
+            'reg-kumyk': {
+                name: 'Кумыки',
+                self: 'Къумукълар',
+                pop: '~520 тыс.',
+                percent: '14.9%',
+                region: 'Прикаспийская низменность',
+                lang: 'Кумыкский (тюркский)',
+                desc: 'Третий по численности народ, крупнейший тюркоязычный этнос Дагестана. Населяют равнинные и предгорные области. Исторически — развитое земледелие, торговля, городская культура.',
+                tags: ['Тюрки', 'Равнина', 'Торговля'],
+                color: 'rgba(184,80,66,0.5)'
+            },
+            'reg-lak': {
+                name: 'Лакцы',
+                self: 'Лак',
+                pop: '~178 тыс.',
+                percent: '5.6%',
+                region: 'Центральный Дагестан',
+                lang: 'Лакский',
+                desc: 'Горный народ, населяющий центральные районы. Известны как искусные ювелиры, оружейники и торговцы. Столица — Кумух, древнейший административный центр Дагестана.',
+                tags: ['Ювелиры', 'Кумух', 'Горы'],
+                color: 'rgba(160,120,55,0.5)'
+            },
+            'reg-tabasaran': {
+                name: 'Табасаранцы',
+                self: 'Табасаран',
+                pop: '~150 тыс.',
+                percent: '4.5%',
+                region: 'Юго-восток',
+                lang: 'Табасаранский',
+                desc: 'Населяют юго-восточные предгорья. Табасаранский язык внесён в Книгу рекордов Гиннесса как один из самых сложных в мире (46 падежей). Мировую славу получили табасаранские ковры.',
+                tags: ['Ковры', '46 падежей', 'Рекорд'],
+                color: 'rgba(80,150,120,0.5)'
+            },
+            'reg-nogay': {
+                name: 'Ногайцы',
+                self: 'Ногъайлар',
+                pop: '~40 тыс.',
+                percent: '1.4%',
+                region: 'Северная равнина',
+                lang: 'Ногайский (тюркский)',
+                desc: 'Тюркский народ, населяющий северные степи Дагестана — Ногайскую степь. Потомки Ногайской Орды. Традиционное занятие — кочевое скотоводство, коневодство.',
+                tags: ['Степь', 'Кочевники', 'Коневодство'],
+                color: 'rgba(180,160,100,0.4)'
+            },
+            'reg-agul': {
+                name: 'Агулы',
+                self: 'Агъулар',
+                pop: '~34 тыс.',
+                percent: '1%',
+                region: 'Южный Дагестан',
+                lang: 'Агульский',
+                desc: 'Малочисленный горный народ южного Дагестана. Живут в труднодоступных ущельях. Известны уникальной архитектурой горных сёл и традиционным террасным земледелием.',
+                tags: ['Горы', 'Террасы', 'Малый народ'],
+                color: 'rgba(140,100,160,0.5)'
+            },
+            'reg-rutul': {
+                name: 'Рутульцы',
+                self: 'Мыхадар',
+                pop: '~36 тыс.',
+                percent: '1.1%',
+                region: 'Юго-запад',
+                lang: 'Рутульский',
+                desc: 'Горный народ юго-западного Дагестана. Центр — село Рутул. Традиционные занятия: скотоводство и земледелие. Известны богатым фольклором и уникальной музыкальной традицией.',
+                tags: ['Фольклор', 'Скотоводство', 'Юго-запад'],
+                color: 'rgba(120,80,60,0.5)'
+            },
+            'reg-tsahur': {
+                name: 'Цахуры',
+                self: 'Йихъбы',
+                pop: '~12 тыс.',
+                percent: '0.4%',
+                region: 'Крайний юго-запад',
+                lang: 'Цахурский',
+                desc: 'Один из самых малочисленных народов Дагестана. Населяют высокогорные районы на границе с Азербайджаном. Исторически были хранителями горных перевалов на Великом Шёлковом пути.',
+                tags: ['Шёлковый путь', 'Граница', 'Перевалы'],
+                color: 'rgba(90,130,100,0.5)'
+            },
+            'reg-andi': {
+                name: 'Андийцы',
+                self: 'Гъваннал',
+                pop: '~25 тыс.',
+                percent: '0.8%',
+                region: 'Западный Дагестан',
+                lang: 'Андийский',
+                desc: 'Горный народ западного Дагестана, относящийся к андо-цезской подгруппе. Известны производством знаменитых андийских бурок из овечьей шерсти, которые ценились по всему Кавказу.',
+                tags: ['Бурки', 'Шерсть', 'Горцы'],
+                color: 'rgba(100,140,80,0.5)'
+            },
+            'reg-chechen': {
+                name: 'Чеченцы-аккинцы',
+                self: 'Аккинцы',
+                pop: '~15 тыс.',
+                percent: '0.5%',
+                region: 'Северо-запад',
+                lang: 'Чеченский',
+                desc: 'Этническая группа чеченцев, исторически проживающая на северо-западе Дагестана. Сохраняют собственные обычаи и тейповую структуру, интегрированы в дагестанское многонациональное общество.',
+                tags: ['Тейпы', 'Северо-запад', 'Обычаи'],
+                color: 'rgba(150,70,70,0.5)'
+            }
+        };
+
+        const regions = document.querySelectorAll('.map-region');
+        const infoPanel = document.getElementById('mapInfo');
+        const defaultPanel = document.getElementById('mapDefault');
+        const legendItems = document.querySelectorAll('.map-legend-item');
+        let activeRegion = null;
+
+        function showInfo(regionId) {
+            const data = mapData[regionId];
+            if (!data) return;
+
+            regions.forEach(r => r.classList.remove('active'));
+            const region = document.getElementById(regionId);
+            if (region) {
+                region.classList.add('active');
+                region.style.fill = data.color;
+            }
+            activeRegion = regionId;
+
+            document.getElementById('mapName').textContent = data.name;
+            document.getElementById('mapSelf').textContent = 'Самоназвание: ' + data.self;
+            
+            document.getElementById('mapStats').innerHTML = 
+                '<div class="map-info-stat"><span class="map-info-stat-value">' + data.pop + '</span><span class="map-info-stat-label">Население</span></div>' +
+                '<div class="map-info-stat"><span class="map-info-stat-value">' + data.percent + '</span><span class="map-info-stat-label">от населения</span></div>' +
+                '<div class="map-info-stat"><span class="map-info-stat-value">' + data.lang + '</span><span class="map-info-stat-label">Язык</span></div>' +
+                '<div class="map-info-stat"><span class="map-info-stat-value">' + data.region + '</span><span class="map-info-stat-label">Регион</span></div>';
+
+            document.getElementById('mapDesc').textContent = data.desc;
+            document.getElementById('mapTags').innerHTML = data.tags.map(function(t) {
+                return '<span class="map-info-tag">' + t + '</span>';
+            }).join('');
+
+            defaultPanel.style.display = 'none';
+            infoPanel.className = 'map-info-content visible';
+        }
+
+        function resetMap() {
+            regions.forEach(r => {
+                r.classList.remove('active');
+                r.style.fill = '';
+            });
+            activeRegion = null;
+            defaultPanel.style.display = '';
+            infoPanel.className = 'map-info-content';
+        }
+
+        regions.forEach(function(region) {
+            region.addEventListener('click', function() {
+                const id = this.id;
+                if (activeRegion === id) {
+                    resetMap();
+                } else {
+                    showInfo(id);
+                }
+            });
+        });
+
+        legendItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                const regionId = this.getAttribute('data-region');
+                if (regionId) {
+                    showInfo(regionId);
+                    
+                    if (window.innerWidth < 993) {
+                        document.getElementById(regionId).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+        });
+
+        regions.forEach(function(region) {
+            region.addEventListener('mouseenter', function() {
+                if (activeRegion !== this.id) {
+                    const data = mapData[this.id];
+                    if (data) this.style.fill = data.color;
+                }
+            });
+            region.addEventListener('mouseleave', function() {
+                if (activeRegion !== this.id) {
+                    this.style.fill = '';
+                }
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

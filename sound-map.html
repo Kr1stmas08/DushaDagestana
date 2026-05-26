@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Квиз: Насколько хорошо ты знаешь Дагестан? 20 вопросов о культуре, истории, традициях и природе.">
+<meta name="keywords" content="квиз Дагестан, тест, викторина, культура Дагестана, история">
+<meta property="og:title" content="Квиз — Насколько ты знаешь Дагестан?">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z' fill='%23D4AF37'/></svg>">
+<title>Квиз — Душа Дагестана</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--emerald:#2C5F4F;--gold:#D4AF37;--gold-light:#e8c85a;--terracotta:#B85042;--night:#0A1128;--night-light:#151d3b;--cream:#FAF7F2;--white:#fff;--cyan:#4ecdc4;--green:#4CAF50;--red:#ef5350;--font-display:'Cinzel',serif;--font-body:'Cormorant Garamond',serif;--font-accent:'Playfair Display',serif;--transition-fast:0.2s ease;--transition-normal:0.4s cubic-bezier(.25,.46,.45,.94);--radius-sm:8px;--radius-md:16px;--radius-lg:24px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--night);color:var(--white);line-height:1.8;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.navbar{position:fixed;top:0;left:0;right:0;padding:.8rem 5%;background:rgba(10,17,40,.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);z-index:1000;border-bottom:1px solid rgba(212,175,55,.25)}.navbar::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.5) 20%,rgba(212,175,55,.8) 50%,rgba(212,175,55,.5) 80%,transparent);opacity:.6}.navbar-inner{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}.logo{display:flex;align-items:center;gap:12px}.logo-icon{width:40px;height:40px;fill:var(--gold);filter:drop-shadow(0 0 8px rgba(212,175,55,.5));transition:all .3s ease}.logo:hover .logo-icon{filter:drop-shadow(0 0 12px rgba(212,175,55,.8));transform:scale(1.05)}.logo-text{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--white);letter-spacing:4px;transition:all .3s ease}.logo:hover .logo-text{text-shadow:0 0 30px rgba(212,175,55,.6)}.logo-text span{color:var(--gold)}.nav-menu{display:flex;align-items:center;gap:1.8rem;list-style:none}.nav-menu a{color:rgba(255,255,255,.75);font-family:var(--font-body);font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;position:relative;padding:6px 0;transition:var(--transition-fast)}.nav-menu a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s ease}.nav-menu a:hover,.nav-menu a.active{color:var(--gold)}.nav-menu a:hover::after,.nav-menu a.active::after{width:100%}.nav-toggle{background:none;border:none;outline:none;display:none;flex-direction:column;gap:6px;cursor:pointer;padding:10px;z-index:1001}.nav-toggle span{width:28px;height:2px;background:var(--white);transition:var(--transition-fast)}.nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}.nav-toggle.active span:nth-child(2){opacity:0}.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+.quiz-page{min-height:100vh;padding:100px 5% 60px;display:flex;flex-direction:column;align-items:center;position:relative}.quiz-page-bg{position:fixed;inset:0;background:linear-gradient(135deg,rgba(10,17,40,.92) 0%,rgba(44,95,79,.85) 40%,rgba(10,17,40,.9) 100%),url('images/hero-bg.jpg') center/cover no-repeat fixed;z-index:-2}.quiz-page-overlay{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 0%,rgba(212,175,55,.12) 0%,transparent 50%),radial-gradient(ellipse at 70% 100%,rgba(78,205,196,.08) 0%,transparent 50%),radial-gradient(circle at 50% 50%,rgba(123,104,238,.05) 0%,transparent 40%);z-index:-1}.quiz-page-pattern{position:fixed;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='%23D4AF37'/%3E%3C/svg%3E");background-size:60px 60px;z-index:-1;animation:patternDrift 60s linear infinite}@keyframes patternDrift{from{transform:translate(0,0)}to{transform:translate(60px,60px)}}.quiz-page-particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}.quiz-particle{position:absolute;border-radius:50%;background:var(--gold);opacity:0;animation:particleFly var(--d,15s) ease-in-out infinite;animation-delay:var(--dl,0s)}@keyframes particleFly{0%{opacity:0;transform:translateY(100vh) scale(0)}15%{opacity:var(--o,0.3)}85%{opacity:var(--o,0.3)}100%{opacity:0;transform:translateY(-80px) scale(1)}}
+.quiz-container{max-width:800px;width:100%;position:relative}
+.quiz-start{text-align:center;padding:60px 40px;background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.2);border-radius:var(--radius-lg);backdrop-filter:blur(10px)}.quiz-start-icon{font-size:4rem;color:var(--gold);margin-bottom:30px;display:block;text-shadow:0 0 40px rgba(212,175,55,.3)}.quiz-start h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);margin-bottom:16px;color:var(--white)}.quiz-start h1 em{color:var(--gold);font-style:normal}.quiz-start-desc{font-family:var(--font-accent);font-style:italic;font-size:1.2rem;color:rgba(255,255,255,.6);margin-bottom:12px;max-width:500px;margin-left:auto;margin-right:auto}.quiz-start-meta{display:flex;justify-content:center;gap:30px;margin:30px 0;flex-wrap:wrap}.quiz-start-meta-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:.95rem}.quiz-start-meta-item i{color:var(--gold)}.quiz-start-btn{display:inline-flex;align-items:center;gap:12px;padding:18px 48px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--night);border:none;border-radius:50px;font-family:var(--font-display);font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s ease;box-shadow:0 10px 40px rgba(212,175,55,.3)}.quiz-start-btn:hover{transform:translateY(-3px);box-shadow:0 15px 50px rgba(212,175,55,.4)}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding:0 4px}.quiz-progress-text{font-family:var(--font-display);font-size:.75rem;letter-spacing:2px;color:var(--gold)}.quiz-score-text{font-size:.9rem;color:rgba(255,255,255,.5)}.quiz-score-text b{color:var(--green)}.quiz-progress-bar{width:100%;height:6px;background:rgba(255,255,255,.08);border-radius:3px;margin-bottom:40px;overflow:hidden}.quiz-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;transition:width .5s cubic-bezier(.25,.46,.45,.94)}
+.quiz-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);overflow:hidden;animation:cardIn .5s ease}.quiz-card-image{width:100%;height:280px;object-fit:cover;display:block;border-bottom:1px solid rgba(212,175,55,.15)}.quiz-card-body{padding:36px}.quiz-category{font-family:var(--font-display);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--cyan,var(--gold));margin-bottom:12px;display:inline-block;padding:4px 14px;background:rgba(78,205,196,.1);border:1px solid rgba(78,205,196,.25);border-radius:50px}.quiz-question{font-family:var(--font-accent);font-size:1.5rem;color:var(--white);margin-bottom:30px;line-height:1.5}
+.quiz-options{display:grid;gap:12px}.quiz-option{display:flex;align-items:center;gap:16px;padding:18px 24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden}.quiz-option:hover{border-color:rgba(212,175,55,.4);background:rgba(212,175,55,.05);transform:translateX(4px)}.quiz-option-letter{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.75rem;font-weight:700;color:rgba(255,255,255,.5);flex-shrink:0;transition:all .3s ease}.quiz-option:hover .quiz-option-letter{border-color:var(--gold);color:var(--gold)}.quiz-option-text{font-size:1.05rem;color:rgba(255,255,255,.8);flex:1}.quiz-option.correct{border-color:var(--green);background:rgba(76,175,80,.1)}.quiz-option.correct .quiz-option-letter{background:var(--green);border-color:var(--green);color:var(--white)}.quiz-option.wrong{border-color:var(--red);background:rgba(239,83,80,.08)}.quiz-option.wrong .quiz-option-letter{background:var(--red);border-color:var(--red);color:var(--white)}.quiz-option.disabled{pointer-events:none;opacity:.6}
+.quiz-feedback{margin-top:20px;padding:20px 24px;border-radius:var(--radius-md);font-size:.95rem;line-height:1.7;animation:fadeIn .4s ease;display:none}.quiz-feedback.show{display:block}.quiz-feedback.correct-fb{background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.25);color:rgba(255,255,255,.8)}.quiz-feedback.wrong-fb{background:rgba(239,83,80,.06);border:1px solid rgba(239,83,80,.2);color:rgba(255,255,255,.8)}.quiz-feedback i{margin-right:8px}.quiz-feedback strong{color:var(--gold)}
+.quiz-next{display:flex;justify-content:flex-end;margin-top:24px}.quiz-next-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;background:var(--gold);color:var(--night);border:none;border-radius:50px;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s ease;opacity:0;transform:translateY(10px)}.quiz-next-btn.show,.quiz-next-btn.visible{opacity:1;transform:translateY(0)}.quiz-next-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,175,55,.3)}
+.quiz-result{text-align:center;padding:50px 40px;background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.2);border-radius:var(--radius-lg);animation:cardIn .6s ease}.quiz-result-score{font-family:var(--font-display);font-size:5rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}.quiz-result-max{font-family:var(--font-display);font-size:1rem;letter-spacing:3px;color:rgba(255,255,255,.4);margin-bottom:24px}.quiz-result-title{font-family:var(--font-display);font-size:1.6rem;color:var(--white);margin-bottom:12px}.quiz-result-desc{font-family:var(--font-accent);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,.6);max-width:500px;margin:0 auto 30px}.quiz-result-bar{width:100%;max-width:400px;height:10px;background:rgba(255,255,255,.08);border-radius:5px;margin:0 auto 30px;overflow:hidden}.quiz-result-bar-fill{height:100%;border-radius:5px;transition:width 1.5s cubic-bezier(.25,.46,.45,.94)}.quiz-result-stats{display:flex;justify-content:center;gap:40px;margin-bottom:36px;flex-wrap:wrap}.quiz-result-stat{text-align:center}.quiz-result-stat-num{font-family:var(--font-display);font-size:2rem;font-weight:900;display:block}.quiz-result-stat-label{font-size:.8rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}.quiz-result-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}.quiz-result-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:50px;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s ease;border:none}.btn-primary{background:var(--gold);color:var(--night)}.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,175,55,.3)}.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.2)}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+@keyframes cardIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.back-to-top{position:fixed;bottom:30px;right:30px;width:48px;height:48px;background:var(--gold);color:var(--night);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .3s ease;z-index:900;box-shadow:0 4px 20px rgba(212,175,55,.3)}.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{background:var(--gold-light);transform:translateY(-3px)}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:1001;width:0%}.page-transition{position:fixed;inset:0;background:var(--night);z-index:9999;opacity:0;visibility:hidden;transition:all .4s ease;pointer-events:none}.page-transition.active{opacity:1;visibility:visible;pointer-events:all}
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--night);padding:12px 24px;z-index:10001;font-family:var(--font-display);font-weight:600;border-radius:0 0 8px 8px;transition:top .3s ease}.skip-link:focus{top:0}
+.container{max-width:1400px;margin:0 auto;padding:0 5%}footer{background:#050810;padding:80px 0 30px;border-top:1px solid rgba(212,175,55,.1);position:relative;margin-top:40px}footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80%;max-width:600px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent)}footer::after{content:'\25C6';position:absolute;top:-8px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:.7rem;background:#050810;padding:0 12px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}.footer-brand p{color:rgba(255,255,255,.6);margin-top:20px;line-height:1.8}.footer-social{display:flex;gap:15px;margin-top:30px}.footer-social a{width:45px;height:45px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);transition:.2s ease}.footer-social a:hover{background:var(--gold);border-color:var(--gold);color:var(--night)}.footer-column h4{color:var(--white);font-family:var(--font-display);font-size:.85rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:24px}.footer-column ul{list-style:none}.footer-column li{margin-bottom:12px}.footer-column a{color:rgba(255,255,255,.6);font-family:var(--font-body);font-size:1.05rem;transition:.2s ease;position:relative;display:inline-block}.footer-column a::before{content:'\2192';position:absolute;left:-15px;opacity:0;color:var(--gold);transition:all .2s ease;font-size:.8em}.footer-column a:hover{color:var(--gold);padding-left:5px}.footer-column a:hover::before{opacity:1;left:-18px}.footer-subscribe input{width:100%;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--white);font-size:.95rem;margin-bottom:12px;transition:.2s ease}.footer-subscribe input:focus{outline:none;border-color:var(--gold)}.footer-subscribe input::placeholder{color:rgba(255,255,255,.4)}.footer-subscribe button{width:100%;padding:14px;background:var(--gold);border:none;border-radius:8px;color:var(--night);font-weight:600;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:.2s ease}.footer-subscribe button:hover{background:var(--gold-light)}.subscribe-msg{color:#e8c85a;font-size:.9rem;margin-top:10px}.footer-bottom{padding-top:30px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.4);font-size:.9rem}
+::selection{background:rgba(212,175,55,.25);color:inherit}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--night)}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold),var(--emerald));border-radius:4px}html{scrollbar-color:var(--gold) var(--night);scrollbar-width:thin}
+@media(max-width:992px){.nav-menu{position:fixed;top:0;right:-100%;width:300px;height:100vh;background:var(--night);flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:right var(--transition-normal);border-left:1px solid rgba(212,175,55,.15);z-index:999}.nav-menu.active{right:0}.nav-toggle{display:flex}.quiz-card-image{height:200px}.quiz-start{padding:40px 24px}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}@media(max-width:768px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:15px;text-align:center}.quiz-result-stats{gap:24px}.quiz-card-body{padding:24px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}@media print{.navbar,.back-to-top,.scroll-progress,.page-transition,.skip-link,.footer-social,.footer-subscribe,.nav-toggle{display:none!important}body{background:#fff;color:#000}}
+
+.difficulty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;max-width:720px;margin-left:auto;margin-right:auto}
+.diff-card{background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px 16px;cursor:pointer;transition:all 0.3s ease;text-align:center;font-family:inherit;color:white;backdrop-filter:blur(10px)}
+.diff-card:hover{border-color:rgba(212,175,55,0.4);transform:translateY(-4px);background:rgba(212,175,55,0.05)}
+.diff-card.selected{border-color:var(--gold);background:rgba(212,175,55,0.1);box-shadow:0 0 30px rgba(212,175,55,0.25);transform:translateY(-4px)}
+.diff-card .diff-icon{font-size:2rem;margin-bottom:12px;color:var(--cyan);transition:color 0.3s}
+.diff-card-medium .diff-icon{color:var(--gold)}
+.diff-card-hard .diff-icon{color:var(--red,#e74c3c)}
+.diff-card.selected .diff-icon{color:var(--gold)}
+.diff-card .diff-label{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:2px;margin-bottom:6px;text-transform:uppercase}
+.diff-card .diff-desc{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:10px;line-height:1.4}
+.diff-card .diff-meta{font-size:0.75rem;color:var(--gold);font-family:var(--font-display);letter-spacing:1px}
+.diff-card .diff-meta i{margin-right:4px}
+@media(max-width:600px){.difficulty-grid{grid-template-columns:1fr;gap:12px}.diff-card{padding:18px}}
+
+.timer-container{display:flex;justify-content:center;align-items:center;margin:16px 0;position:relative}
+.timer-ring{position:relative;width:60px;height:60px}
+.timer-text{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--gold);transition:color 0.3s}
+#timerCircle{transition:stroke-dashoffset 1s linear,stroke 0.3s}
+.timer-bonus{position:absolute;left:calc(50% + 50px);top:50%;transform:translateY(-50%);min-width:80px;text-align:left;pointer-events:none}
+.bonus-popup{display:inline-block;background:var(--gold);color:var(--night);padding:6px 14px;border-radius:50px;font-family:var(--font-display);font-weight:700;letter-spacing:1px;font-size:0.9rem;animation:bonusPop 1.5s ease forwards;box-shadow:0 4px 20px rgba(212,175,55,0.5)}
+@keyframes bonusPop{0%{transform:scale(0);opacity:0}30%{transform:scale(1.3);opacity:1}100%{transform:scale(1) translateY(-30px);opacity:0}}
+
+.leaderboard-section{margin-top:48px;padding:28px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(212,175,55,0.15);border-radius:20px;backdrop-filter:blur(10px);max-width:640px;margin-left:auto;margin-right:auto}
+.leaderboard-header{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;color:var(--gold)}
+.leaderboard-header i{font-size:1.6rem}
+.leaderboard-header h2{font-family:var(--font-display);font-size:1.3rem;letter-spacing:2px;text-transform:uppercase;margin:0}
+.leaderboard-tabs{display:flex;gap:8px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
+.lb-tab{padding:8px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:50px;color:rgba(255,255,255,0.6);cursor:pointer;transition:all 0.2s;font-family:var(--font-display);font-size:0.75rem;letter-spacing:1px;text-transform:uppercase}
+.lb-tab:hover{color:white;border-color:rgba(212,175,55,0.3)}
+.lb-tab.active{background:rgba(212,175,55,0.15);border-color:var(--gold);color:var(--gold)}
+.leaderboard-list{min-height:100px}
+.lb-empty{text-align:center;padding:30px;color:rgba(255,255,255,0.4);font-family:var(--font-body)}
+.lb-empty i{font-size:2rem;display:block;margin-bottom:10px;color:var(--gold);opacity:0.3}
+.lb-empty small{font-size:0.85rem;opacity:0.7;display:inline-block;margin-top:6px}
+.lb-entry{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;margin-bottom:6px;transition:all 0.2s}
+.lb-entry:hover{background:rgba(255,255,255,0.05);transform:translateX(2px)}
+.lb-top{border-color:rgba(212,175,55,0.2);background:rgba(212,175,55,0.04)}
+.lb-medal{font-size:1.4rem;min-width:32px;text-align:center}
+.lb-rank{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:rgba(255,255,255,0.06);border-radius:50%;font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:rgba(255,255,255,0.6)}
+.lb-info{flex:1;min-width:0}
+.lb-name{color:white;font-weight:600;font-family:var(--font-body);font-size:0.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-date{color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:2px}
+.lb-score{text-align:right;min-width:60px}
+.lb-score b{display:block;color:var(--gold);font-family:var(--font-display);font-size:1.1rem;font-weight:700}
+.lb-score small{color:rgba(255,255,255,0.4);font-size:0.7rem}
+.lb-clear-btn{display:block;margin:20px auto 0;padding:8px 16px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);border-radius:50px;cursor:pointer;font-family:var(--font-body);font-size:0.8rem;transition:all 0.2s}
+.lb-clear-btn:hover{color:var(--red,#e74c3c);border-color:rgba(231,76,60,0.3)}
+
+.save-score-section{margin:24px 0;padding:20px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);border-radius:14px}
+.save-score-label{text-align:center;color:var(--gold);font-family:var(--font-display);letter-spacing:1px;font-size:0.85rem;margin-bottom:12px;text-transform:uppercase}
+.save-score-label i{margin-right:6px}
+.save-score-input-wrap{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.save-score-input{flex:1;padding:10px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:white;font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s}
+.save-score-input:focus{border-color:var(--gold)}
+.save-score-input::placeholder{color:rgba(255,255,255,0.3)}
+.save-score-btn{padding:10px 20px;background:var(--gold);border:none;border-radius:10px;color:var(--night);cursor:pointer;font-family:var(--font-display);font-weight:700;letter-spacing:1px;font-size:0.85rem;text-transform:uppercase;transition:all 0.2s;white-space:nowrap}
+.save-score-btn:hover{background:#e5c158;transform:translateY(-1px);box-shadow:0 4px 15px rgba(212,175,55,0.4)}
+.save-score-success{text-align:center;color:var(--green);font-family:var(--font-display);letter-spacing:1px;font-size:0.9rem;padding:16px;background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.2);border-radius:12px;margin:16px 0}
+.save-score-success i{margin-right:8px;font-size:1.1rem}
+@media(max-width:500px){.save-score-input-wrap{flex-direction:column}}
+
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Перейти к содержимому</a>
+<div class="page-transition" id="pageTransition"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="navbar" role="navigation" aria-label="Основная навигация"><div class="navbar-inner"><a href="index.html" class="logo"><svg class="logo-icon" viewBox="0 0 40 40"><path d="M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z"/></svg><span class="logo-text">ДАГЕ<span>СТАН</span></span></a><ul class="nav-menu" id="navMenu"><li><a href="index.html">Главная</a></li><li><a href="peoples.html">Народы</a></li><li><a href="traditions.html">Традиции</a></li><li><a href="cuisine.html">Кухня</a></li><li><a href="crafts.html">Ремёсла</a></li><li><a href="music.html">Музыка</a></li><li><a href="vr-tour.html">VR-тур</a></li><li><a href="sound-map.html" class="active">Квиз</a></li><li><a href="gallery.html">Маршруты</a></li></ul><button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button></div></nav>
+<main role="main">
+<div class="quiz-page" id="main-content">
+<div class="quiz-page-bg"></div>
+<div class="quiz-page-pattern"></div>
+<div class="quiz-container">
+
+<div class="quiz-start" id="quizStart">
+<span class="quiz-start-icon"><i class="fas fa-mountain-sun"></i></span>
+<h1>Насколько ты знаешь<br><em>Дагестан?</em></h1>
+<p class="quiz-start-desc">Выбери уровень сложности и проверь свои знания о Стране гор</p>
+
+<div class="difficulty-grid">
+<button class="diff-card" data-diff="easy" onclick="selectDifficulty('easy')">
+<div class="diff-icon"><i class="fas fa-seedling"></i></div>
+<div class="diff-label">Лёгкий</div>
+<div class="diff-desc">Основы и известные факты</div>
+<div class="diff-meta"><i class="fas fa-clock"></i> 45 сек/вопрос</div>
+</button>
+<button class="diff-card diff-card-medium" data-diff="medium" onclick="selectDifficulty('medium')">
+<div class="diff-icon"><i class="fas fa-mountain"></i></div>
+<div class="diff-label">Средний</div>
+<div class="diff-desc">Культура и традиции</div>
+<div class="diff-meta"><i class="fas fa-clock"></i> 30 сек/вопрос</div>
+</button>
+<button class="diff-card diff-card-hard" data-diff="hard" onclick="selectDifficulty('hard')">
+<div class="diff-icon"><i class="fas fa-khanda"></i></div>
+<div class="diff-label">Эксперт</div>
+<div class="diff-desc">Глубокие знания</div>
+<div class="diff-meta"><i class="fas fa-clock"></i> 20 сек/вопрос</div>
+</button>
+</div>
+
+<button class="quiz-start-btn" id="startBtn" onclick="startQuiz()" disabled><i class="fas fa-play"></i> Выбери уровень</button>
+
+<div class="leaderboard-section" id="leaderboardSection">
+<div class="leaderboard-header">
+<i class="fas fa-trophy"></i>
+<h2>Таблица лидеров</h2>
+</div>
+<div class="leaderboard-tabs">
+<button class="lb-tab active" data-tab="easy" onclick="showLeaderboard(&quot;easy&quot;)">Лёгкий</button>
+<button class="lb-tab" data-tab="medium" onclick="showLeaderboard(&quot;medium&quot;)">Средний</button>
+<button class="lb-tab" data-tab="hard" onclick="showLeaderboard(&quot;hard&quot;)">Эксперт</button>
+</div>
+<div class="leaderboard-list" id="leaderboardList"></div>
+<button class="lb-clear-btn" onclick="clearLeaderboard()"><i class="fas fa-trash"></i> Очистить</button>
+</div>
+</div>
+
+<div id="quizGame" style="display:none;">
+<div class="quiz-header">
+<div class="quiz-progress-text" id="qNum">Вопрос 1 / 10</div>
+<div class="quiz-score-text"><i class="fas fa-star"></i> <b id="qScore">0</b> очков</div>
+</div>
+<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progressFill" style="width:0%"></div></div>
+
+<div class="timer-container">
+<div class="timer-ring">
+<svg width="60" height="60" viewBox="0 0 60 60">
+<circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+<circle id="timerCircle" cx="30" cy="30" r="26" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round" transform="rotate(-90 30 30)" stroke-dasharray="163.36" stroke-dashoffset="0"/>
+</svg>
+<div class="timer-text" id="timerText">30</div>
+</div>
+<div class="timer-bonus" id="timerBonus"></div>
+</div>
+
+<div class="quiz-card">
+<div class="quiz-card-body">
+<div class="quiz-category" id="qCat"></div>
+<div class="quiz-question" id="qText"></div>
+<div class="quiz-options" id="qOpts"></div>
+<div class="quiz-feedback" id="qFeedback"></div>
+<div class="quiz-next"><button class="quiz-next-btn" id="nextBtn" onclick="nextQuestion()">Следующий <i class="fas fa-arrow-right"></i></button></div>
+</div>
+</div>
+</div>
+
+<div class="quiz-result" id="quizResult" style="display:none;">
+<div class="quiz-result-score" id="resScore">0</div>
+<div class="quiz-result-max" id="resMax">очков</div>
+<h2 class="quiz-result-title" id="resTitle"></h2>
+<p class="quiz-result-desc" id="resDesc"></p>
+<div class="quiz-result-bar"><div class="quiz-result-bar-fill" id="resBarFill" style="width:0%"></div></div>
+<div class="quiz-result-stats">
+<div class="quiz-result-stat"><span class="quiz-result-stat-num" id="resCorrect" style="color:var(--green)">0</span><span class="quiz-result-stat-label">Верно</span></div>
+<div class="quiz-result-stat"><span class="quiz-result-stat-num" id="resWrong" style="color:var(--red)">0</span><span class="quiz-result-stat-label">Неверно</span></div>
+<div class="quiz-result-stat"><span class="quiz-result-stat-num" id="resPct" style="color:var(--gold)">0%</span><span class="quiz-result-stat-label">Точность</span></div>
+</div>
+
+<div class="save-score-section" id="saveScoreSection">
+<div class="save-score-label"><i class="fas fa-trophy"></i> Сохрани результат в таблице лидеров</div>
+<div class="save-score-input-wrap">
+<input type="text" id="playerName" class="save-score-input" placeholder="Твоё имя" maxlength="20" autocomplete="off">
+<button class="save-score-btn" onclick="saveScore()"><i class="fas fa-save"></i> Сохранить</button>
+</div>
+</div>
+<div class="save-score-success" id="saveScoreSuccess" style="display:none;">
+<i class="fas fa-check-circle"></i> Результат сохранён!
+</div>
+
+<div class="quiz-result-actions">
+<button class="quiz-result-btn btn-primary" onclick="restartQuiz()"><i class="fas fa-redo"></i> Пройти снова</button>
+<button class="quiz-result-btn btn-outline" onclick="shareResult()"><i class="fas fa-share-alt"></i> Поделиться</button>
+</div>
+</div>
+
+</div>
+</div>
+</main>
+<button class="back-to-top" id="backToTop" aria-label="Наверх"><i class="fas fa-chevron-up"></i></button>
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><span class="logo-text">ДАГЕ<span>СТАН</span></span></a><p>Культурно-просветительский портал о традициях, обычаях и наследии народов Дагестана.</p><div class="footer-social"><a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a><a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div><div class="footer-column"><h4>Разделы</h4><ul><li><a href="peoples.html">Народы</a></li><li><a href="traditions.html">Традиции</a></li><li><a href="cuisine.html">Кухня</a></li><li><a href="crafts.html">Ремёсла</a></li><li><a href="music.html">Музыка</a></li></ul></div><div class="footer-column"><h4>Интерактив</h4><ul><li><a href="vr-tour.html">VR-тур 360°</a></li><li><a href="sound-map.html">Квиз</a></li><li><a href="gallery.html">Маршруты</a></li></ul></div><div class="footer-column"><h4>Подписка</h4><form class="footer-subscribe" id="subscribeForm"><input type="email" placeholder="Ваш email" required aria-label="Email для подписки"><button type="submit">Подписаться</button></form><p class="subscribe-msg" id="subscribeMsg" style="display:none;"></p></div></div><div class="footer-bottom"><p>© 2026 Душа Дагестана. Все права защищены.</p><p>Сделано с любовью к культуре Кавказа</p></div></div></footer>
+<script>
+const questions=[
+{cat:"География",q:"Какой каньон в Дагестане считается одним из глубочайших в мире?",opts:["Сулакский каньон","Матласская расщелина","Гунибское ущелье","Карадахская теснина"],correct:0,fact:"Сулакский каньон достигает глубины 1920 метров — глубже Большого каньона в США.",difficulty:"easy"},
+{cat:"Народы",q:"Сколько официально признанных народов проживает в Дагестане?",opts:["Около 20","Около 30","Более 60","Более 100"],correct:2,fact:"Дагестан — самый многонациональный регион России. Здесь проживают более 60 народов, говорящих на 30+ языках.",difficulty:"easy"},
+{cat:"Языки",q:"Какой дагестанский язык попал в Книгу рекордов Гиннесса как один из самых сложных в мире?",opts:["Аварский","Даргинский","Табасаранский","Лезгинский"],correct:2,fact:"Табасаранский язык имеет 46 падежей — это один из мировых рекордов среди живых языков.",difficulty:"easy"},
+{cat:"Культура",q:"Какой танец стал визитной карточкой всего Кавказа?",opts:["Шаланда","Лезгинка","Барыня","Хоровод"],correct:1,fact:"Лезгинка — древний танец-соревнование, символизирующий орла. Танцуют его все народы Дагестана.",difficulty:"easy"},
+{cat:"Ремёсла",q:"Какое село Дагестана знаменито ювелирным искусством из серебра на весь мир?",opts:["Балхар","Кубачи","Унцукуль","Гоцатль"],correct:1,fact:"Кубачинские мастера создают шедевры из серебра более 1000 лет. Их работы хранятся в Эрмитаже, Лувре и Метрополитен-музее.",difficulty:"easy"},
+{cat:"Кухня",q:"Что такое хинкал — главное блюдо дагестанской кухни?",opts:["Жареные пирожки с мясом","Варёные кусочки теста с мясом и бульоном","Шашлык из баранины","Каша из кукурузной муки"],correct:1,fact:"Хинкал — это не хинкали! У каждого народа Дагестана свой рецепт: аварский, даргинский, кумыкский, лакский — все разные.",difficulty:"easy"},
+{cat:"История",q:"Какой город Дагестана является одним из древнейших городов России?",opts:["Махачкала","Дербент","Кизляр","Хасавюрт"],correct:1,fact:"Дербенту более 5000 лет. Его крепость Нарын-Кала — объект Всемирного наследия ЮНЕСКО.",difficulty:"easy"},
+{cat:"Природа",q:"Какой водопад в Дагестане имеет высоту около 70 метров и расположен на Хунзахском плато?",opts:["Салтинский","Тобот","Чвахило","Ханагский"],correct:1,fact:"Водопад Тобот — один из самых впечатляющих в Европе. Зимой он превращается в гигантскую ледяную колонну.",difficulty:"medium"},
+{cat:"Традиции",q:"Как называется священный закон гостеприимства у народов Дагестана?",opts:["Шариат","Адат","Намус","Маслиат"],correct:1,fact:"Адаты — это неписаные законы горцев. Гость в доме священен: ему отдают лучшую комнату и защищают ценой жизни.",difficulty:"medium"},
+{cat:"Кухня",q:"Что такое урбеч — уникальный дагестанский суперфуд?",opts:["Вяленое мясо","Густая паста из перетёртых семян и орехов","Горный сыр","Травяной чай"],correct:1,fact:"Урбеч делают из льна, абрикосовых косточек, конопли, кунжута. Это мощный источник энергии, который горцы брали в дальние походы.",difficulty:"medium"},
+{cat:"География",q:"Как называется перевод слова «Дагестан» с тюркского?",opts:["Горная страна","Страна огней","Земля орлов","Край водопадов"],correct:0,fact:"«Даг» — гора, «стан» — страна. Дагестан буквально означает «Страна гор».",difficulty:"medium"},
+{cat:"Ремёсла",q:"Какое село знаменито своими коврами, включёнными в список ЮНЕСКО?",opts:["Кубачи","Табасаран","Балхар","Гоцатль"],correct:1,fact:"Табасаранские ковры ткут вручную из шерсти. На один ковёр уходит от 6 месяцев до 2 лет работы.",difficulty:"medium"},
+{cat:"Культура",q:"Кто написал знаменитую книгу «Мой Дагестан»?",opts:["Сулейман Стальский","Расул Гамзатов","Эффенди Капиев","Фазу Алиева"],correct:1,fact:"Расул Гамзатов — народный поэт Дагестана. Его стихотворение «Журавли» стало знаменитой песней, известной во всём мире.",difficulty:"medium"},
+{cat:"История",q:"Кто возглавлял горцев в Кавказской войне против Российской империи 25 лет?",opts:["Хаджи-Мурат","Имам Шамиль","Гамзат-бек","Гази-Мухаммад"],correct:1,fact:"Имам Шамиль — легендарный лидер горцев, объединивший народы Дагестана и Чечни. Его военный гений признавали даже противники.",difficulty:"medium"},
+{cat:"Природа",q:"Какое море омывает восточную границу Дагестана?",opts:["Чёрное","Азовское","Каспийское","Аральское"],correct:2,fact:"Каспийское море — крупнейший замкнутый водоём планеты. Дагестанское побережье протянулось на 530 километров.",difficulty:"hard"},
+{cat:"Народы",q:"Какой народ Дагестана является самым многочисленным?",opts:["Даргинцы","Лезгины","Аварцы","Кумыки"],correct:2,fact:"Аварцы составляют около 29% населения Дагестана (~950 тысяч человек). Их самоназвание — маарулал.",difficulty:"hard"},
+{cat:"Традиции",q:"Что дагестанец обязан сделать, если к нему пришёл гость?",opts:["Угостить чаем","Отдать лучшую комнату и защитить","Спеть песню","Подарить кинжал"],correct:1,fact:"По адатам, даже враг, переступивший порог дома, становится гостем. Хозяин обязан его накормить, дать ночлег и защитить.",difficulty:"hard"},
+{cat:"Кухня",q:"Как называются дагестанские пельмени с разнообразными начинками?",opts:["Хинкали","Курзе","Манты","Равиоли"],correct:1,fact:"Курзе — дагестанские пельмени с характерной косичкой-защипом. Начинки: мясо, творог, яйца с зеленью, тыква.",difficulty:"hard"},
+{cat:"География",q:"Сколько примерно языков звучит в Дагестане?",opts:["Около 10","Около 30","Около 50","Более 100"],correct:1,fact:"В Дагестане говорят на более чем 30 языках. Многие из них не имеют аналогов нигде в мире.",difficulty:"hard"},
+{cat:"Ремёсла",q:"Из какого дерева кубачинские мастера традиционно изготавливают пандур?",opts:["Дуб","Абрикос","Тутовое дерево","Орех"],correct:2,fact:"Тутовое (шелковичное) дерево даёт мягкий, тёплый звук. Мастер вырезает пандур из цельного куска, не склеивая.",difficulty:"hard"},
+{cat:"География",q:"На каком море расположен Дагестан?",opts:["Чёрное","Каспийское","Азовское","Балтийское"],correct:1,fact:"Дагестан омывается Каспийским морем — крупнейшим замкнутым водоёмом мира.",difficulty:"easy"},
+{cat:"География",q:"Какая столица Дагестана?",opts:["Дербент","Буйнакск","Махачкала","Каспийск"],correct:2,fact:"Махачкала — столица Дагестана с 1922 года. Названа в честь революционера Махача Дахадаева.",difficulty:"easy"},
+{cat:"Культура",q:"Что такое папаха?",opts:["Блюдо","Головной убор","Танец","Мелодия"],correct:1,fact:"Папаха — традиционный мужской головной убор из овчины, символ достоинства горца.",difficulty:"easy"},
+{cat:"Кухня",q:"Какое мясо чаще всего используется в дагестанской кухне?",opts:["Свинина","Курица","Баранина","Рыба"],correct:2,fact:"Баранина — основное мясо в горской кухне. Из неё готовят хинкал, шашлык, плов.",difficulty:"easy"},
+{cat:"Природа",q:"Какое время года лучше всего для посещения горного Дагестана?",opts:["Зима","Весна","Лето","Осень"],correct:2,fact:"Лето (июнь-сентябрь) — лучшее время: дороги открыты, погода тёплая, водопады полноводны.",difficulty:"easy"},
+{cat:"Традиции",q:"Что означает слово \"адаты\"?",opts:["Танцы","Блюда","Обычаи","Украшения"],correct:2,fact:"Адаты — свод обычаев и неписаных законов горских народов Дагестана.",difficulty:"easy"},
+{cat:"История",q:"Кто такой имам Шамиль?",opts:["Поэт","Предводитель горцев в XIX веке","Художник","Современный политик"],correct:1,fact:"Имам Шамиль (1797-1871) — легендарный лидер Северо-Кавказского имамата, боролся с Российской империей 25 лет.",difficulty:"medium"},
+{cat:"Природа",q:"Сколько метров в самой высокой точке Дагестана?",opts:["2500","3500","4466","5000"],correct:2,fact:"Гора Базардюзю — высшая точка Дагестана (4466м), расположена на границе с Азербайджаном.",difficulty:"medium"},
+{cat:"Ремёсла",q:"Из какого дерева делают унцукульские трости?",opts:["Дуб","Абрикос","Сосна","Орех"],correct:1,fact:"Абрикосовое дерево — его твёрдая тёплая древесина идеальна для инкрустации серебром.",difficulty:"medium"},
+{cat:"Языки",q:"К какой языковой семье относится большинство дагестанских языков?",opts:["Тюркская","Иранская","Нахско-дагестанская","Славянская"],correct:2,fact:"Нахско-дагестанская ветвь северокавказской семьи — одна из древнейших в мире и не имеет доказанного родства с другими.",difficulty:"medium"},
+{cat:"Культура",q:"Какой духовой инструмент обязателен на свадьбах Дагестана?",opts:["Флейта","Зурна","Труба","Дудук"],correct:1,fact:"Зурна — двуязычковый инструмент с пронзительным звуком, без него не обходится ни одна свадьба.",difficulty:"medium"},
+{cat:"География",q:"Сколько народов признано коренными в Дагестане?",opts:["10","14","20","Более 30"],correct:1,fact:"14 официально признанных коренных народов: аварцы, даргинцы, кумыки, лезгины, лакцы, табасаранцы и др.",difficulty:"medium"},
+{cat:"История",q:"В каком году Дербент был включён в список всемирного наследия ЮНЕСКО?",opts:["1991","2003","2010","2015"],correct:1,fact:"В 2003 году цитадель, старый город и крепостные сооружения Дербента получили статус ЮНЕСКО.",difficulty:"hard"},
+{cat:"Языки",q:"Сколько падежей в арчинском языке?",opts:["6","17","28","Более 40"],correct:3,fact:"Арчинский язык имеет около 40 падежей. На нём говорят всего 970 человек в одном высокогорном селе.",difficulty:"hard"},
+{cat:"Ремёсла",q:"Как называется техника чернения серебра в Кубачи?",opts:["Скань","Ниелло","Зернь","Филигрань"],correct:1,fact:"Ниелло (чернение) — состав из серебра, свинца, меди и серы, создающий тёмный фон для узора.",difficulty:"hard"},
+{cat:"История",q:"Древнейшее название Кубачи?",opts:["Зирехгеран","Гамсутль","Хунзах","Цудахар"],correct:0,fact:"Зирехгеран (\"кольчужники\" на арабском) — кубачинцы славились производством кольчуг с VI века.",difficulty:"hard"},
+{cat:"Природа",q:"Единственный подземный водопад Дагестана?",opts:["Тобот","Салтинский","Чвахилинский","Ханагский"],correct:1,fact:"Салтинский водопад падает через отверстие в скальном своде внутрь пещеры — уникальное явление.",difficulty:"hard"},
+{cat:"Культура",q:"Что символизирует узор \"бараньи рога\" на коврах?",opts:["Защиту","Достаток и плодородие","Любовь","Путешествие"],correct:1,fact:"Бараньи рога (къоч) символизируют изобилие — один из древнейших горских символов благополучия.",difficulty:"hard"}
+]
+let current=0,score=0,answered=false,shuffled=[];
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+var selectedDifficulty=null;
+var timerInterval=null;
+var timePerQuestion=45;
+var timeLeft=45;
+var totalScore=0;
+var currentShuffled=[];
+var currentIdx=0;
+var correctCount=0;
+var answeredFlag=false;
+var diffSettings={easy:{time:45,basePoints:100},medium:{time:30,basePoints:150},hard:{time:20,basePoints:200}};
+
+function selectDifficulty(diff){
+selectedDifficulty=diff;
+document.querySelectorAll('.diff-card').forEach(c=>c.classList.remove('selected'));
+document.querySelector('[data-diff="'+diff+'"]').classList.add('selected');
+var btn=document.getElementById('startBtn');
+btn.disabled=false;
+var names={easy:'\u041b\u0451\u0433\u043a\u0438\u0439',medium:'\u0421\u0440\u0435\u0434\u043d\u0438\u0439',hard:'\u042d\u043a\u0441\u043f\u0435\u0440\u0442'};
+btn.innerHTML='<i class="fas fa-play"></i> \u041d\u0430\u0447\u0430\u0442\u044c ('+names[diff]+')';
+}
+
+function startQuiz(){
+if(!selectedDifficulty){alert('\u0412\u044b\u0431\u0435\u0440\u0438 \u0443\u0440\u043e\u0432\u0435\u043d\u044c \u0441\u043b\u043e\u0436\u043d\u043e\u0441\u0442\u0438');return}
+var filtered=questions.filter(q=>q.difficulty===selectedDifficulty);
+currentShuffled=shuffle(filtered).slice(0,10).map(function(q){
+var indices=shuffle([0,1,2,3]);
+return{cat:q.cat,q:q.q,opts:indices.map(i=>q.opts[i]),correct:indices.indexOf(q.correct),fact:q.fact,difficulty:q.difficulty};
+});
+currentIdx=0;correctCount=0;totalScore=0;answeredFlag=false;
+timePerQuestion=diffSettings[selectedDifficulty].time;
+document.getElementById('quizStart').style.display='none';
+document.getElementById('quizGame').style.display='block';
+document.getElementById('quizResult').style.display='none';
+renderQuestion();
+}
+
+function renderQuestion(){
+answeredFlag=false;
+var q=currentShuffled[currentIdx];
+var total=currentShuffled.length;
+document.getElementById('qNum').textContent='\u0412\u043e\u043f\u0440\u043e\u0441 '+(currentIdx+1)+' / '+total;
+document.getElementById('qScore').textContent=totalScore;
+document.getElementById('progressFill').style.width=(currentIdx/total*100)+'%';
+document.getElementById('qCat').textContent=q.cat;
+document.getElementById('qText').textContent=q.q;
+var optsEl=document.getElementById('qOpts');
+optsEl.innerHTML='';
+var letters=['A','B','C','D'];
+q.opts.forEach(function(opt,i){
+var div=document.createElement('div');
+div.className='quiz-option';
+div.innerHTML='<div class="quiz-option-letter">'+letters[i]+'</div><div class="quiz-option-text">'+opt+'</div>';
+div.onclick=function(){selectAnswer(i)};
+optsEl.appendChild(div);
+});
+document.getElementById('qFeedback').className='quiz-feedback';
+document.getElementById('qFeedback').style.display='none';
+document.getElementById('nextBtn').className='quiz-next-btn';
+document.getElementById('timerBonus').textContent='';
+document.getElementById('timerText').style.color='var(--gold)';
+startTimer();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTimer(){
+timeLeft=timePerQuestion;
+var circle=document.getElementById('timerCircle');
+var circumference=163.36;
+document.getElementById('timerText').textContent=timeLeft;
+circle.style.strokeDashoffset='0';
+circle.style.stroke='var(--gold)';
+if(timerInterval)clearInterval(timerInterval);
+timerInterval=setInterval(function(){
+timeLeft--;
+var progress=timeLeft/timePerQuestion;
+circle.style.strokeDashoffset=(circumference*(1-progress))+'';
+document.getElementById('timerText').textContent=timeLeft;
+if(timeLeft<=5){circle.style.stroke='var(--red)';document.getElementById('timerText').style.color='var(--red)';}
+else if(timeLeft<=10){circle.style.stroke='var(--terracotta)';document.getElementById('timerText').style.color='var(--terracotta)';}
+if(timeLeft<=0){clearInterval(timerInterval);if(!answeredFlag){timeOutAnswer();}}
+},1000);
+}
+
+function timeOutAnswer(){
+answeredFlag=true;
+var q=currentShuffled[currentIdx];
+var options=document.querySelectorAll('.quiz-option');
+options.forEach(function(opt,i){
+opt.style.pointerEvents='none';
+if(i===q.correct)opt.classList.add('correct');
+});
+var fb=document.getElementById('qFeedback');
+fb.className='quiz-feedback wrong visible';
+fb.innerHTML='<div class="quiz-feedback-title"><i class="fas fa-clock"></i> \u0412\u0440\u0435\u043c\u044f \u0432\u044b\u0448\u043b\u043e!</div><div class="quiz-feedback-fact">'+q.fact+'</div>';
+fb.style.display='block';
+document.getElementById('nextBtn').classList.add('visible');
+}
+
+function selectAnswer(idx){
+if(answeredFlag)return;
+answeredFlag=true;
+clearInterval(timerInterval);
+var q=currentShuffled[currentIdx];
+var options=document.querySelectorAll('.quiz-option');
+options.forEach(function(opt,i){
+opt.style.pointerEvents='none';
+if(i===q.correct){opt.classList.add('correct')}
+else if(i===idx){opt.classList.add('wrong')}
+});
+var fb=document.getElementById('qFeedback');
+var bonus=0;
+if(idx===q.correct){
+correctCount++;
+var basePoints=diffSettings[selectedDifficulty].basePoints;
+var timeBonus=Math.round(basePoints*(timeLeft/timePerQuestion)*0.5);
+bonus=basePoints+timeBonus;
+totalScore+=bonus;
+fb.className='quiz-feedback correct visible';
+fb.innerHTML='<div class="quiz-feedback-title"><i class="fas fa-check-circle"></i> \u0412\u0435\u0440\u043d\u043e! +'+bonus+' \u043e\u0447\u043a\u043e\u0432</div><div class="quiz-feedback-fact">'+q.fact+'</div>';
+document.getElementById('timerBonus').innerHTML='<span class="bonus-popup">+'+bonus+'</span>';
+}else{
+fb.className='quiz-feedback wrong visible';
+fb.innerHTML='<div class="quiz-feedback-title"><i class="fas fa-times-circle"></i> \u041d\u0435\u0432\u0435\u0440\u043d\u043e</div><div class="quiz-feedback-fact">'+q.fact+'</div>';
+}
+fb.style.display='block';
+document.getElementById('qScore').textContent=totalScore;
+document.getElementById('nextBtn').classList.add('visible');
+}
+
+function nextQuestion(){
+currentIdx++;
+if(currentIdx>=currentShuffled.length){showResult();}
+else{renderQuestion();}
+}
+
+function showResult(){
+if(timerInterval)clearInterval(timerInterval);
+document.getElementById('quizGame').style.display='none';
+document.getElementById('quizResult').style.display='block';
+var total=currentShuffled.length;
+var pct=Math.round(correctCount/total*100);
+document.getElementById('resScore').textContent=totalScore;
+document.getElementById('resMax').textContent='\u043e\u0447\u043a\u043e\u0432 \u2022 '+correctCount+' \u0438\u0437 '+total+' \u0432\u0435\u0440\u043d\u043e';
+document.getElementById('resCorrect').textContent=correctCount;
+document.getElementById('resWrong').textContent=total-correctCount;
+document.getElementById('resPct').textContent=pct+'%';
+var title,desc,color;
+if(pct>=90){title='\u0418\u0441\u0442\u0438\u043d\u043d\u044b\u0439 \u0434\u0430\u0433\u0435\u0441\u0442\u0430\u043d\u0435\u0446!';desc='\u0422\u044b \u0437\u043d\u0430\u0435\u0448\u044c \u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d \u043a\u0430\u043a \u0441\u0432\u043e\u0438 \u043f\u044f\u0442\u044c \u043f\u0430\u043b\u044c\u0446\u0435\u0432. \u0413\u043e\u0440\u0446\u044b \u0431\u044b \u0433\u043e\u0440\u0434\u0438\u043b\u0438\u0441\u044c!';color='var(--gold)'}
+else if(pct>=70){title='\u0417\u043d\u0430\u0442\u043e\u043a \u041a\u0430\u0432\u043a\u0430\u0437\u0430';desc='\u041e\u0442\u043b\u0438\u0447\u043d\u044b\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442! \u0422\u044b \u0445\u043e\u0440\u043e\u0448\u043e \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u0435\u0448\u044c\u0441\u044f \u0432 \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0435 \u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d\u0430.';color='var(--green)'}
+else if(pct>=50){title='\u041d\u0430\u0447\u0438\u043d\u0430\u044e\u0449\u0438\u0439 \u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c';desc='\u041d\u0435\u043f\u043b\u043e\u0445\u043e! \u041d\u043e \u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d \u0445\u0440\u0430\u043d\u0438\u0442 \u0435\u0449\u0451 \u043c\u043d\u043e\u0433\u043e \u0442\u0430\u0439\u043d.';color='var(--cyan)'}
+else{title='\u0412\u0440\u0435\u043c\u044f \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0439!';desc='\u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d \u0436\u0434\u0451\u0442 \u0442\u0435\u0431\u044f! \u0418\u0441\u0441\u043b\u0435\u0434\u0443\u0439 \u043d\u0430\u0448 \u043f\u043e\u0440\u0442\u0430\u043b.';color='var(--terracotta)'}
+document.getElementById('resTitle').textContent=title;
+document.getElementById('resDesc').textContent=desc;
+setTimeout(function(){
+document.getElementById('resBarFill').style.width=pct+'%';
+document.getElementById('resBarFill').style.background=color;
+},100);
+document.getElementById('resCorrect').style.color=color;
+document.getElementById('progressFill').style.width='100%';
+document.getElementById('saveScoreSection').style.display='block';
+document.getElementById('saveScoreSuccess').style.display='none';
+document.getElementById('playerName').value='';
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function saveScore(){
+var name=document.getElementById('playerName').value.trim();
+if(!name){alert('\u0412\u0432\u0435\u0434\u0438 \u0438\u043c\u044f');return}
+if(name.length>20)name=name.substring(0,20);
+var key='dagestanQuizLB_'+selectedDifficulty;
+var board=JSON.parse(localStorage.getItem(key)||'[]');
+board.push({name:name,score:totalScore,correct:correctCount,total:currentShuffled.length,date:new Date().toISOString()});
+board.sort(function(a,b){return b.score-a.score});
+board=board.slice(0,10);
+localStorage.setItem(key,JSON.stringify(board));
+document.getElementById('saveScoreSection').style.display='none';
+document.getElementById('saveScoreSuccess').style.display='block';
+}
+
+function showLeaderboard(diff){
+document.querySelectorAll('.lb-tab').forEach(t=>t.classList.remove('active'));
+var tab=document.querySelector('[data-tab="'+diff+'"]');
+if(tab)tab.classList.add('active');
+var key='dagestanQuizLB_'+diff;
+var board=JSON.parse(localStorage.getItem(key)||'[]');
+var list=document.getElementById('leaderboardList');
+if(!list)return;
+if(board.length===0){list.innerHTML='<div class="lb-empty"><i class="fas fa-medal"></i> \u041f\u043e\u043a\u0430 \u043d\u0435\u0442 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432<br><small>\u041f\u0440\u043e\u0439\u0434\u0438 \u043a\u0432\u0438\u0437 \u0438 \u0441\u0442\u0430\u043d\u044c \u043f\u0435\u0440\u0432\u044b\u043c!</small></div>';return}
+var medals=['\u{1F947}','\u{1F948}','\u{1F949}'];
+list.innerHTML=board.map(function(e,i){
+var medal=i<3?medals[i]:'<span class="lb-rank">'+(i+1)+'</span>';
+var date=new Date(e.date);
+var dateStr=String(date.getDate()).padStart(2,'0')+'.'+String(date.getMonth()+1).padStart(2,'0')+'.'+date.getFullYear();
+return '<div class="lb-entry'+(i<3?' lb-top':'')+'"><div class="lb-medal">'+medal+'</div><div class="lb-info"><div class="lb-name">'+escapeHtml(e.name)+'</div><div class="lb-date">'+dateStr+'</div></div><div class="lb-score"><b>'+e.score+'</b><small>'+e.correct+'/'+e.total+'</small></div></div>';
+}).join('');
+}
+
+function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+function clearLeaderboard(){
+if(!confirm('\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c \u0442\u0430\u0431\u043b\u0438\u0446\u0443 \u043b\u0438\u0434\u0435\u0440\u043e\u0432?'))return;
+var activeTab=document.querySelector('.lb-tab.active').dataset.tab;
+localStorage.removeItem('dagestanQuizLB_'+activeTab);
+showLeaderboard(activeTab);
+}
+
+function restartQuiz(){
+document.getElementById('quizResult').style.display='none';
+document.getElementById('quizStart').style.display='block';
+document.querySelectorAll('.diff-card').forEach(c=>c.classList.remove('selected'));
+document.getElementById('startBtn').disabled=true;
+document.getElementById('startBtn').innerHTML='<i class="fas fa-play"></i> \u0412\u044b\u0431\u0435\u0440\u0438 \u0443\u0440\u043e\u0432\u0435\u043d\u044c';
+selectedDifficulty=null;
+showLeaderboard('easy');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function shareResult(){
+var diffName={easy:'\u041b\u0451\u0433\u043a\u0438\u0439',medium:'\u0421\u0440\u0435\u0434\u043d\u0438\u0439',hard:'\u042d\u043a\u0441\u043f\u0435\u0440\u0442'}[selectedDifficulty];
+var text='\u042f \u043d\u0430\u0431\u0440\u0430\u043b '+totalScore+' \u043e\u0447\u043a\u043e\u0432 \u0432 \u043a\u0432\u0438\u0437\u0435 \u00ab\u041d\u0430\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0442\u044b \u0437\u043d\u0430\u0435\u0448\u044c \u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d?\u00bb ('+diffName+')!';
+if(navigator.share){navigator.share({title:'\u041a\u0432\u0438\u0437',text:text,url:window.location.href}).catch(()=>{})}
+else if(navigator.clipboard){navigator.clipboard.writeText(text+' '+window.location.href).then(function(){alert('\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e!')})}
+else{prompt('\u0421\u043a\u043e\u043f\u0438\u0440\u0443\u0439:',text)}
+}
+
+document.addEventListener('DOMContentLoaded',function(){showLeaderboard('easy')});
+const navToggle=document.getElementById('navToggle'),navMenu=document.getElementById('navMenu');navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active');navToggle.setAttribute('aria-expanded',navMenu.classList.contains('active'));navMenu.classList.toggle('active')});document.querySelectorAll('.nav-menu a').forEach(l=>{l.addEventListener('click',()=>{navToggle.classList.remove('active');navMenu.classList.remove('active')})});
+const backToTop=document.getElementById('backToTop');window.addEventListener('scroll',()=>{backToTop.classList.toggle('visible',window.scrollY>500);const dH=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=dH>0?(window.scrollY/dH*100)+'%':'0%'});backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('a[href]').forEach(link=>{link.addEventListener('click',e=>{const href=link.getAttribute('href');if(!href||href.startsWith('#')||href.startsWith('javascript')||href.startsWith('mailto'))return;e.preventDefault();document.getElementById('pageTransition').classList.add('active');setTimeout(()=>{window.location.href=href},400)})});window.addEventListener('pageshow',()=>document.getElementById('pageTransition').classList.remove('active'));
+const subForm=document.getElementById('subscribeForm');if(subForm)subForm.addEventListener('submit',function(e){e.preventDefault();const email=this.querySelector('input').value;const msg=document.getElementById('subscribeMsg');if(msg){msg.textContent='Спасибо за подписку! ('+email+')';msg.style.display='block'}this.querySelector('input').value=''});
+(function(){const p=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-menu a').forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')===p)l.classList.add('active')})})();
+</script>
+
+</body>
+</html>

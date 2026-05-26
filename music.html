@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Музыка и танцы народов Дагестана — лезгинка, пандур, народные песни и современные исполнители.">
+    <meta name="keywords" content="музыка Дагестана, лезгинка, пандур, дагестанские танцы, народные песни">
+    <meta name="author" content="Душа Дагестана">
+    <meta property="og:title" content="Музыка и танцы — Душа Дагестана">
+    <meta property="og:description" content="Музыка и танцы народов Дагестана — лезгинка, пандур, народные песни и современные исполнители.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z' fill='%23D4AF37'/></svg>">
+    <title>Музыка и танцы — Душа Дагестана</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --emerald: #2C5F4F;
+            --emerald-dark: #1a3d32;
+            --gold: #D4AF37;
+            --gold-light: #e8c85a;
+            --gold-pale: #f7e8a0;
+            --terracotta: #B85042;
+            --terracotta-dark: #8B3A2F;
+            --night: #0A1128;
+            --night-light: #151d3b;
+            --white: #ffffff;
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-accent: 'Playfair Display', serif;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--night);
+            color: var(--white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 0.8rem 5%;
+            background: rgba(10,17,40,0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212,175,55,0.25);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo { display: flex; align-items: center; gap: 12px; }
+
+        .logo-icon {
+            width: 40px; height: 40px;
+            fill: var(--gold);
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212,175,55,0.2);
+        }
+        .logo-text span { color: var(--gold); }
+
+        .nav-menu { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.75);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: 4px 0;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+        .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            outline: none;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .nav-toggle span { width: 28px; height: 2px; background: var(--white); transition: var(--transition-fast); }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(160deg, rgba(10,17,40,0.85) 0%, rgba(184,80,66,0.5) 45%, rgba(44,95,79,0.7) 100%),
+                url('images/microphone.jpg') center/cover;
+        }
+
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(212,175,55,0.12) 0%, transparent 65%);
+            animation: heroPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes heroPulse {
+            0%,100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .hero-waves {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 160px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3px;
+            padding: 0 2%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-wave-bar {
+            width: 4px;
+            background: linear-gradient(to top, rgba(212,175,55,0.7), rgba(212,175,55,0.05));
+            border-radius: 2px 2px 0 0;
+            animation: waveAnim var(--dur, 1.2s) ease-in-out infinite alternate;
+            animation-delay: var(--delay, 0s);
+            transition: height 0.3s ease, background 0.3s ease;
+        }
+        .hero-wave-bar.highlighted {
+            background: linear-gradient(to top, var(--gold), rgba(212,175,55,0.3));
+            box-shadow: 0 0 8px rgba(212,175,55,0.6);
+        }
+        @keyframes waveAnim {
+            from { height: 10px; }
+            to { height: var(--h, 80px); }
+        }
+
+        .music-note-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 1.4rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            animation: noteFloat var(--nf-dur, 1.8s) ease-out forwards;
+            user-select: none;
+        }
+        @keyframes noteFloat {
+            0%   { opacity: 0; transform: translateY(0) rotate(var(--nf-rot, 0deg)) scale(0.5); }
+            15%  { opacity: 0.9; }
+            60%  { opacity: 0.7; }
+            100% { opacity: 0; transform: translateY(-120px) rotate(var(--nf-rot2, 20deg)) scale(1.1); }
+        }
+
+        .hero-notes-band {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 160px;
+            z-index: 3;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero-note-static {
+            position: absolute;
+            bottom: 0;
+            font-size: 1.6rem;
+            opacity: 0;
+            animation: riseNote var(--rn-dur, 3s) ease-in-out var(--rn-delay, 0s) infinite;
+        }
+        @keyframes riseNote {
+            0%   { opacity: 0; transform: translateY(0) rotate(var(--rn-rot,0deg)); }
+            20%  { opacity: 0.5; }
+            80%  { opacity: 0.25; }
+            100% { opacity: 0; transform: translateY(-150px) rotate(var(--rn-rot2, 20deg)) scale(0.8); }
+        }
+
+        .hero-content h1 {
+            position: relative;
+        }
+        .hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px; left: 50%;
+            transform: translateX(-50%);
+            width: 200px; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            box-shadow: 0 0 20px rgba(212,175,55,0.6);
+        }
+
+        .hero-staff {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 160px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-staff-line {
+            position: absolute;
+            left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.18), rgba(212,175,55,0.25), rgba(212,175,55,0.18), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 0 5%;
+            max-width: 1000px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.68rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding: 8px 24px;
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 50px;
+            background: rgba(212,175,55,0.08);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 24px;
+            text-shadow: 0 5px 30px rgba(0,0,0,0.6);
+            animation: fadeInUp 1s ease 0.15s backwards;
+            line-height: 1.1;
+        }
+        .hero-content h1 span { 
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(212,175,55,0.5), 0 0 80px rgba(212,175,55,0.2);
+            display: inline-block;
+            animation: goldShimmer 4s ease-in-out infinite;
+        }
+        @keyframes goldShimmer {
+            0%, 100% { text-shadow: 0 0 40px rgba(212,175,55,0.5), 0 0 80px rgba(212,175,55,0.2); }
+            50% { text-shadow: 0 0 60px rgba(212,175,55,0.8), 0 0 120px rgba(212,175,55,0.4), 0 0 200px rgba(212,175,55,0.15); }
+        }
+
+        .hero-mountain-silhouette {
+            position: absolute;
+            bottom: 155px; left: 0; right: 0;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.12;
+        }
+
+        .hero-content p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            animation: fadeInUp 1s ease 0.5s backwards;
+        }
+
+        .hero-stat { text-align: center; }
+        .hero-stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 0 30px rgba(212,175,55,0.4);
+        }
+        .hero-stat-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px; left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 4;
+        }
+        .scroll-indicator i { font-size: 2rem; color: var(--gold); }
+        @keyframes bounce {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .section-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.68rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 80px;
+        }
+
+        .instruments-section {
+            padding: 120px 5%;
+            background:
+                linear-gradient(135deg, rgba(10,17,40,0.97) 0%, rgba(21,29,59,0.95) 100%),
+                url('images/hero-bg.jpg') center/cover fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        .instruments-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='%23D4AF37' fill-opacity='0.025'/%3E%3C/svg%3E") 60px 60px;
+        }
+        .instruments-section::after {
+            content: '';
+            position: absolute;
+            top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+        }
+
+        .instruments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .instrument-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212,175,55,0.18);
+            border-radius: var(--radius-lg);
+            padding: 44px 36px;
+            text-align: center;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .instrument-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 65%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+        .instrument-card:hover::before { transform: scale(1); }
+        .instrument-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(212,175,55,0.5);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.08);
+        }
+
+        .instrument-icon {
+            width: 100px; height: 100px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 100%);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 3rem;
+            position: relative;
+            transition: var(--transition-normal);
+        }
+        .instrument-card:hover .instrument-icon {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.35);
+        }
+
+        .instrument-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .instrument-card .origin {
+            font-family: 'Cormorant Garamond', serif;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.88rem;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .instrument-card p {
+            font-family: 'Cormorant Garamond', serif;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .quote-banner {
+            padding: 110px 5%;
+            background:
+                linear-gradient(135deg, rgba(184,80,66,0.82) 0%, rgba(10,17,40,0.95) 50%, rgba(44,95,79,0.8) 100%),
+                url('images/microphone.jpg') center/cover fixed;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-banner::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 60%);
+        }
+        .quote-banner-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .quote-banner-icon {
+            font-size: 3.5rem;
+            color: rgba(212,175,55,0.3);
+            margin-bottom: 28px;
+        }
+        .quote-banner-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.4rem, 3vw, 2.1rem);
+            color: var(--gold-light);
+            line-height: 1.65;
+            margin-bottom: 28px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .quote-banner-author {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+        }
+
+        .audio-player-section {
+            padding: 120px 5%;
+            background:
+                linear-gradient(135deg, rgba(26,61,50,0.92) 0%, rgba(10,17,40,0.97) 60%, rgba(21,29,59,0.95) 100%),
+                url('images/hero-bg.jpg') center/cover fixed;
+            position: relative;
+        }
+        .audio-player-section::before {
+            content: '';
+            position: absolute;
+            bottom: -100px; left: -100px;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(44,95,79,0.12) 0%, transparent 70%);
+        }
+
+        .audio-player-main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .player-visualizer {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3px;
+            height: 48px;
+            margin-bottom: 32px;
+        }
+        .viz-bar {
+            width: 4px;
+            background: linear-gradient(to top, var(--gold), rgba(212,175,55,0.3));
+            border-radius: 2px;
+            animation: vizAnim var(--vd, 0.8s) ease-in-out infinite alternate paused;
+            height: 6px;
+        }
+        .viz-bar.playing { animation-play-state: running; }
+        @keyframes vizAnim {
+            from { height: 6px; }
+            to   { height: var(--vh, 40px); }
+        }
+
+        .player-info-main {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .track-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        .track-artist {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: rgba(255,255,255,0.55);
+            font-size: 1.1rem;
+        }
+
+        .player-controls-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .player-btn {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .player-btn:hover:not(:disabled) {
+            background: var(--gold);
+            color: var(--night);
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+        .player-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+        .player-btn-large {
+            width: 76px; height: 76px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border: none; border-radius: 50%;
+            color: var(--night);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex; align-items: center; justify-content: center;
+            padding-left: 4px;
+            box-shadow: 0 8px 30px rgba(212,175,55,0.45);
+        }
+        .player-btn-large:hover {
+            transform: scale(1.12);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.65);
+        }
+
+        .player-progress {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+        .time-current, .time-total {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 0.9rem;
+            min-width: 44px;
+        }
+        .progress-bar-main {
+            flex: 1; height: 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+        .progress-fill-main {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 3px;
+            width: 0%;
+            position: relative;
+        }
+        .progress-handle {
+            position: absolute;
+            top: 50%; left: 0%;
+            transform: translate(-50%, -50%);
+            width: 14px; height: 14px;
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+        .progress-bar-main:hover .progress-handle { opacity: 1; }
+
+        .player-volume {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+        .player-volume i { color: var(--gold); font-size: 1.3rem; cursor: pointer; }
+        .volume-slider {
+            width: 140px; height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 13px; height: 13px;
+            background: var(--gold);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .playlist-section {
+            padding: 100px 5%;
+            background:
+                linear-gradient(135deg, rgba(10,17,40,0.98) 0%, rgba(21,29,59,0.96) 100%),
+                url('images/peoples-bg.jpg') center/cover fixed;
+            position: relative;
+        }
+        .playlist-section::before {
+            content: '';
+            position: absolute;
+            top: -150px; right: -150px;
+            width: 600px; height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+        }
+        .playlist-container { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 22px 28px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            margin-bottom: 14px;
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+        .playlist-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(212,175,55,0.35);
+            transform: translateX(8px);
+        }
+        .playlist-item.playing {
+            background: rgba(212,175,55,0.1);
+            border-color: var(--gold);
+            box-shadow: 0 5px 25px rgba(212,175,55,0.15);
+        }
+        .playlist-number {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(212,175,55,0.3);
+            min-width: 40px;
+            text-align: center;
+        }
+        .playlist-item.playing .playlist-number { color: var(--gold); }
+        .playlist-play {
+            width: 50px; height: 50px;
+            background: transparent;
+            border: 1px solid rgba(212,175,55,0.4);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            padding-left: 3px;
+        }
+        .playlist-item.playing .playlist-play { background: var(--gold); color: var(--night); border-color: var(--gold); }
+        .playlist-play:hover { transform: scale(1.1); background: rgba(212,175,55,0.15); }
+        .playlist-info { flex: 1; }
+        .playlist-info h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+        }
+        .playlist-info p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: rgba(255,255,255,0.55);
+            font-size: 1rem;
+        }
+        .playlist-duration {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 0.85rem;
+        }
+
+        .dance-section {
+            padding: 120px 5%;
+            background:
+                linear-gradient(135deg, rgba(10,17,40,0.94) 0%, rgba(184,80,66,0.18) 50%, rgba(10,17,40,0.96) 100%),
+                url('images/tanec-orla-photo.jpg') center/cover fixed;
+            position: relative;
+        }
+        .dance-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .dance-image-container {
+            position: relative;
+            height: 650px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+        .dance-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .dance-image-container:hover .dance-image { transform: scale(1.08); }
+        .dance-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, transparent 50%);
+        }
+        
+        .dance-image-container::before {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px;
+            right: 20px; bottom: 20px;
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: calc(var(--radius-lg) - 4px);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .dance-content-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.68rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 16px;
+        }
+        .dance-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: var(--white);
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+        .dance-content h2 span { color: var(--gold); }
+        .dance-content p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+        .dance-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .dance-feature {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--gold);
+            transition: var(--transition-fast);
+        }
+        .dance-feature:hover { background: rgba(255,255,255,0.07); transform: translateX(5px); }
+        .dance-feature i { color: var(--gold); font-size: 1.5rem; }
+        .dance-feature span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.88);
+        }
+
+        .genres-section {
+            padding: 120px 5%;
+            background:
+                linear-gradient(135deg, rgba(21,29,59,0.97) 0%, rgba(44,95,79,0.25) 50%, rgba(10,17,40,0.98) 100%),
+                url('images/hero-bg.jpg') center/cover fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        .genres-section::before {
+            content: '';
+            position: absolute;
+            bottom: -200px; left: 50%;
+            transform: translateX(-50%);
+            width: 800px; height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(44,95,79,0.1) 0%, transparent 70%);
+        }
+        .genres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .genre-card {
+            border-radius: var(--radius-lg);
+            padding: 44px 28px;
+            text-align: center;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .genre-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: var(--radius-lg);
+            padding: 1px;
+            background: var(--border-gradient);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .genre-card.gc1 {
+            background: rgba(212,175,55,0.06);
+            --border-gradient: linear-gradient(135deg, rgba(212,175,55,0.5), rgba(212,175,55,0.1));
+        }
+        .genre-card.gc2 {
+            background: rgba(184,80,66,0.06);
+            --border-gradient: linear-gradient(135deg, rgba(184,80,66,0.5), rgba(184,80,66,0.1));
+        }
+        .genre-card.gc3 {
+            background: rgba(44,95,79,0.08);
+            --border-gradient: linear-gradient(135deg, rgba(44,95,79,0.6), rgba(44,95,79,0.1));
+        }
+        .genre-card.gc4 {
+            background: rgba(100,100,200,0.06);
+            --border-gradient: linear-gradient(135deg, rgba(100,120,220,0.5), rgba(100,120,220,0.1));
+        }
+        .genre-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.45); }
+        .genre-icon {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .genre-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .gc1 .genre-name { color: var(--gold); }
+        .gc2 .genre-name { color: #d47060; }
+        .gc3 .genre-name { color: #5aad8a; }
+        .gc4 .genre-name { color: #8890e0; }
+        .genre-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.62);
+            line-height: 1.6;
+        }
+
+        .artists-section {
+            padding: 120px 5%;
+            background:
+                linear-gradient(135deg, rgba(10,17,40,0.96) 0%, rgba(26,61,50,0.9) 50%, rgba(10,17,40,0.97) 100%),
+                url('images/peoples-bg.jpg') center/cover fixed;
+            position: relative;
+        }
+        .artists-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40L40 0z' fill='%23D4AF37' fill-opacity='0.02'/%3E%3C/svg%3E") 80px 80px;
+        }
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .artist-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+        .artist-card:hover {
+            transform: translateY(-14px);
+            border-color: rgba(212,175,55,0.4);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.06);
+        }
+        .artist-image-container { position: relative; height: 280px; overflow: hidden; }
+        .artist-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .artist-card:hover .artist-image { transform: scale(1.12); }
+        .artist-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,17,40,0.95) 0%, rgba(10,17,40,0.2) 60%, transparent 100%);
+        }
+        .artist-content { padding: 30px 28px; }
+        .artist-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .artist-content .role {
+            font-family: 'Cormorant Garamond', serif;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .artist-content p {
+            font-family: 'Cormorant Garamond', serif;
+            color: rgba(255,255,255,0.75);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .facts-section {
+            padding: 110px 5%;
+            background:
+                linear-gradient(160deg, rgba(184,80,66,0.12) 0%, rgba(10,17,40,0.97) 30%, rgba(10,17,40,0.97) 70%, rgba(44,95,79,0.12) 100%),
+                url('images/hero-bg.jpg') center/cover;
+            position: relative;
+        }
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .fact-card {
+            padding: 40px 32px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-normal);
+        }
+        .fact-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212,175,55,0.35);
+            background: rgba(255,255,255,0.05);
+        }
+        .fact-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(212,175,55,0.2);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .fact-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+            text-shadow: 0 0 20px rgba(212,175,55,0.3);
+        }
+        .fact-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        footer {
+            background: #050810;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(212,175,55,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white, #fff);
+            transition: 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--gold, #D4AF37);
+            border-color: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+        }
+
+        .footer-column h4 {
+            color: var(--white, #fff);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.6);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            transition: 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold, #D4AF37);
+            padding-left: 5px;
+        }
+
+        .footer-subscribe input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white, #fff);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe input:focus {
+            outline: none;
+            border-color: var(--gold, #D4AF37);
+        }
+
+        .footer-subscribe input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-subscribe button {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold, #D4AF37);
+            border: none;
+            border-radius: 8px;
+            color: var(--night, #0A1128);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe button:hover {
+            background: var(--gold-light, #e8c85a);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        .subscribe-msg {
+            color: #e8c85a;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1100px) {
+            .instruments-grid { grid-template-columns: repeat(2, 1fr); }
+            .artists-grid { grid-template-columns: repeat(2, 1fr); }
+            .genres-grid { grid-template-columns: repeat(2, 1fr); }
+            .facts-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 280px; height: 100vh;
+                background: var(--night);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right var(--transition-normal);
+                border-left: 1px solid rgba(212,175,55,0.15);
+                z-index: 999;
+            }
+            .nav-menu.active { right: 0; }
+            .nav-toggle { display: flex; }
+            .hero-stats { flex-direction: column; gap: 30px; }
+            .dance-container { grid-template-columns: 1fr; gap: 50px; }
+            .dance-image-container { height: 420px; }
+            .dance-features { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .instruments-grid { grid-template-columns: 1fr; }
+            .artists-grid { grid-template-columns: 1fr; }
+            .genres-grid { grid-template-columns: 1fr; }
+            .facts-grid { grid-template-columns: 1fr; }
+            .audio-player-main { padding: 28px; }
+            .player-btn { width: 44px; height: 44px; }
+            .player-btn-large { width: 64px; height: 64px; }
+        }
+    
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            padding: 12px 24px;
+            z-index: 10001;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            border-radius: 0 0 8px 8px;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--gold-light, #e8c85a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold, #D4AF37), var(--gold-light, #e8c85a));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: var(--night, #0A1128);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            pointer-events: none;
+        }
+        .page-transition.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .back-to-top { transition: none; }
+            .page-transition { transition: none; }
+        }
+
+        @media print {
+            .navbar, .back-to-top, .scroll-progress, .page-transition,
+            .preloader, .hero-scroll, .skip-link, .footer-social,
+            .footer-subscribe, .nav-toggle { display: none !important; }
+            body { background: #fff; color: #000; font-size: 12pt; }
+            footer { background: #fff; color: #333; border-top: 1px solid #ccc; padding: 20px 0; }
+            footer a { color: #333; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+            .culture-card, .story-image img, img { break-inside: avoid; }
+        }
+
+        .logo {
+            position: relative;
+        }
+        .logo-text {
+            transition: all 0.3s ease;
+        }
+        .logo:hover .logo-text {
+            text-shadow: 0 0 30px rgba(212,175,55,0.6), 0 0 60px rgba(212,175,55,0.2);
+        }
+        .logo:hover .logo-icon {
+            filter: drop-shadow(0 0 12px rgba(212,175,55,0.8));
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5) 20%, rgba(212,175,55,0.8) 50%, rgba(212,175,55,0.5) 80%, transparent);
+            opacity: 0.6;
+        }
+
+        ::selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+        ::-moz-selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--night, #0A1128);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold, #D4AF37), var(--emerald, #2C5F4F));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--gold-light, #e8c85a), var(--emerald, #2C5F4F));
+        }
+        html {
+            scrollbar-color: var(--gold, #D4AF37) var(--night, #0A1128);
+            scrollbar-width: thin;
+        }
+
+        .stat-number, .hero-stat-number {
+            position: relative;
+        }
+        @keyframes statGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(212,175,55,0.3); }
+            50% { text-shadow: 0 0 40px rgba(212,175,55,0.6), 0 0 80px rgba(212,175,55,0.2); }
+        }
+        .stat-number:hover, .hero-stat-number:hover {
+            animation: statGlow 2s ease-in-out infinite;
+        }
+
+        .story-quote::before,
+        .intro-quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--gold, #D4AF37);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37) 30%, var(--gold, #D4AF37) 70%, transparent);
+        }
+        footer::after {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold, #D4AF37);
+            font-size: 0.7rem;
+            background: #050810;
+            padding: 0 12px;
+        }
+        footer {
+            position: relative;
+        }
+
+        .footer-column a {
+            position: relative;
+            display: inline-block;
+        }
+        .footer-column a::before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            color: var(--gold, #D4AF37);
+            transition: all 0.2s ease;
+            font-size: 0.8em;
+        }
+        .footer-column a:hover::before {
+            opacity: 1;
+            left: -18px;
+        }
+
+        .story-image img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
+        }
+        .story-image:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05) contrast(1.02);
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            gap: 20px;
+            opacity: 0.5;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            max-width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37));
+        }
+        .section-divider::after {
+            background: linear-gradient(90deg, var(--gold, #D4AF37), transparent);
+        }
+        .section-divider svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold, #D4AF37);
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
+        <div class="page-transition" id="pageTransition"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav class="navbar" role="navigation" aria-label="Основная навигация">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40">
+                    <path d="M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z"/>
+                </svg>
+                <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="peoples.html">Народы</a></li>
+                <li><a href="traditions.html">Традиции</a></li>
+                <li><a href="cuisine.html">Кухня</a></li>
+                <li><a href="crafts.html">Ремёсла</a></li>
+                <li><a href="music.html" class="active">Музыка</a></li>
+                <li><a href="vr-tour.html">VR-тур</a></li>
+                <li><a href="sound-map.html">Квиз</a></li>
+                <li><a href="gallery.html">Маршруты</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main role="main">
+    
+    <section id="main-content" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+
+        <svg class="hero-mountain-silhouette" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,200 L0,140 L80,90 L160,120 L240,60 L320,100 L400,40 L480,80 L560,20 L640,70 L720,10 L800,60 L880,30 L960,75 L1040,25 L1120,70 L1200,45 L1280,85 L1360,55 L1440,100 L1440,200 Z" fill="url(#mountainGrad)"/>
+            <defs>
+                <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="hero-staff" id="heroStaff">
+            <div class="hero-staff-line" style="bottom:32px;"></div>
+            <div class="hero-staff-line" style="bottom:52px;"></div>
+            <div class="hero-staff-line" style="bottom:72px;"></div>
+            <div class="hero-staff-line" style="bottom:92px;"></div>
+            <div class="hero-staff-line" style="bottom:112px;"></div>
+        </div>
+
+        <div class="hero-waves" id="heroWaves"></div>
+
+        <div class="hero-notes-band" id="heroNotesBand"></div>
+
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <i class="fas fa-music"></i>
+                Дагестанская музыка
+            </div>
+            <h1>Мелодии <span>гор</span></h1>
+            <p>Где каждый звук — эхо веков, а каждый танец — рассказ о свободе и чести</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">30+</span>
+                    <span class="hero-stat-label">Инструментов</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">1000+</span>
+                    <span class="hero-stat-label">Лет истории</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">60</span>
+                    <span class="hero-stat-label">Народных танцев</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="instruments-section">
+        <span class="section-eyebrow">Традиционные инструменты</span>
+        <h2 class="section-title">Голоса традиции</h2>
+        <p class="section-subtitle">Народные инструменты, хранящие память поколений</p>
+
+        <div class="instruments-grid">
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🎸</div>
+                <h3>Пандур</h3>
+                <p class="origin">Аварцы, лакцы</p>
+                <p>Трёхструнный щипковый инструмент с грушевидным корпусом. Звук пандура — голос гор, протяжный и меланхоличный. Мастера вырезают его из цельного куска тутового дерева.</p>
+            </div>
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🪕</div>
+                <h3>Тар</h3>
+                <p class="origin">Южный Дагестан</p>
+                <p>Азербайджанский струнный инструмент, популярный в Дербенте. Тар имеет 11 струн и корпус в форме восьмёрки, покрытый бараньей кожей. Идеален для мугама.</p>
+            </div>
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🎺</div>
+                <h3>Зурна</h3>
+                <p class="origin">Все народы</p>
+                <p>Духовой инструмент с пронзительным торжественным звуком. Зурна обязательна на свадьбах и праздниках. Её изготавливают из абрикосового дерева.</p>
+            </div>
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🥁</div>
+                <h3>Доол (Дхол)</h3>
+                <p class="origin">Все народы</p>
+                <p>Двусторонний барабан, сердце дагестанской музыки. Ритм доола задаёт темп лезгинке и всем народным танцам. Без него не обходится ни один праздник.</p>
+            </div>
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🎻</div>
+                <h3>Чунгур</h3>
+                <p class="origin">Кумыки</p>
+                <p>Длинношейная лютня с двумя-тремя струнами — инструмент чабанов и странствующих певцов. Его протяжные мелодии сопровождали героические эпосы и любовные песни.</p>
+            </div>
+            <div class="instrument-card reveal">
+                <div class="instrument-icon">🎼</div>
+                <h3>Саз</h3>
+                <p class="origin">Южный Дагестан</p>
+                <p>Длинношейная лютня с 7–9 струнами, инструмент ашугов — народных поэтов. На сазе исполняют лирические песни о любви, разлуке, родине.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-banner">
+        <div class="quote-banner-inner">
+            <div class="quote-banner-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-banner-text">
+                «Музыка гор не имеет слов — она говорит на языке, который понимает 
+                каждая душа: язык ветра, камня и неба над вершинами»
+            </p>
+            <span class="quote-banner-author">— Мудрость дагестанских ашугов</span>
+        </div>
+    </section>
+
+    <section class="audio-player-section">
+        <span class="section-eyebrow">Слушать онлайн</span>
+        <h2 class="section-title">Музыка Дагестана</h2>
+        <p class="section-subtitle">Аутентичные записи народных мелодий</p>
+
+        <div class="audio-player-main">
+            <audio id="mainAudio" preload="metadata"></audio>
+
+            <div class="player-visualizer" id="playerViz"></div>
+
+            <div class="player-info-main">
+                <div class="track-title" id="currentTrackTitle">Выберите композицию</div>
+                <div class="track-artist" id="currentTrackArtist">из плейлиста ниже</div>
+            </div>
+
+            <div class="player-controls-main">
+                <button class="player-btn" id="prevBtn" onclick="playPrevious()">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="player-btn-large" id="mainPlayBtn" onclick="toggleMainPlay()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="player-btn" id="nextBtn" onclick="playNext()">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+
+            <div class="player-progress">
+                <span class="time-current" id="timeCurrent">0:00</span>
+                <div class="progress-bar-main" id="progressBar" onclick="seekTo(event)">
+                    <div class="progress-fill-main" id="progressFill"></div>
+                    <div class="progress-handle" id="progressHandle"></div>
+                </div>
+                <span class="time-total" id="timeTotal">0:00</span>
+            </div>
+
+            <div class="player-volume">
+                <i class="fas fa-volume-up" id="volumeIcon" onclick="toggleMute()"></i>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70" oninput="changeVolume(this.value)">
+            </div>
+        </div>
+    </section>
+
+    <section class="playlist-section">
+        <span class="section-eyebrow">Плейлист</span>
+        <h2 class="section-title">Музыкальная коллекция</h2>
+        <p class="section-subtitle">Избранные композиции народов Дагестана</p>
+
+        <div class="playlist-container" id="playlistContainer"></div>
+    </section>
+
+    <section class="dance-section">
+        <div class="dance-container">
+            <div class="dance-content">
+                <span class="dance-content-eyebrow">Национальный танец</span>
+                <h2>Лезгинка: <span>Танец орла</span></h2>
+                <p>Лезгинка — это не просто танец, это философия, воплощённая в движении. Мужчина танцует, как гордый горный орёл — резко, стремительно, с вызовом. Женщина — как лебедь, плавно и грациозно, словно плывёт над землёй.</p>
+                <p>Каждое движение имеет значение. Расправленные руки — крылья орла. Быстрые шаги на носках — скольжение по скалам. Резкие развороты — готовность к бою. Лезгинка требует невероятной физической подготовки и годов тренировок.</p>
+                <p>Настоящий мастер может танцевать на кинжалах, на краю обрыва, в узком кругу зрителей — везде, где есть вызов и честь.</p>
+
+                <div class="dance-features">
+                    <div class="dance-feature">
+                        <i class="fas fa-fire"></i>
+                        <span>Темпераментность</span>
+                    </div>
+                    <div class="dance-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Скорость</span>
+                    </div>
+                    <div class="dance-feature">
+                        <i class="fas fa-medal"></i>
+                        <span>Виртуозность</span>
+                    </div>
+                    <div class="dance-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Страсть</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dance-image-container">
+                <img loading="lazy" src="images/lezginka-tanec-orla.jpg" alt="Лезгинка" class="dance-image">
+                <div class="dance-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="genres-section">
+        <span class="section-eyebrow">Жанры и стили</span>
+        <h2 class="section-title">Голоса разных народов</h2>
+        <p class="section-subtitle">Каждый народ Дагестана несёт свою музыкальную традицию</p>
+
+        <div class="genres-grid">
+            <div class="genre-card gc1 reveal">
+                <span class="genre-icon">🎵</span>
+                <span class="genre-name">Народная песня</span>
+                <p class="genre-desc">Протяжные эпические песни — героические, лирические, свадебные. Передаются устно из поколения в поколение, меняясь и обретая новые смыслы.</p>
+            </div>
+            <div class="genre-card gc2 reveal">
+                <span class="genre-icon">🎙️</span>
+                <span class="genre-name">Ашугская поэзия</span>
+                <p class="genre-desc">Странствующие певцы-ашуги импровизируют на сазе, слагая стихи о любви, справедливости и свободе. Живая традиция Южного Дагестана.</p>
+            </div>
+            <div class="genre-card gc3 reveal">
+                <span class="genre-icon">🥁</span>
+                <span class="genre-name">Танцевальная музыка</span>
+                <p class="genre-desc">Зажигательные ритмы зурны и доола для лезгинки, хоруми и других народных танцев. Темп нарастает вместе с танцем — музыканты и танцоры едины.</p>
+            </div>
+            <div class="genre-card gc4 reveal">
+                <span class="genre-icon">🕌</span>
+                <span class="genre-name">Духовная музыка</span>
+                <p class="genre-desc">Суфийские зикры, коранические напевы, мелодии мечетей. Особый медитативный жанр, где музыка становится молитвой и путём к Богу.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="artists-section">
+        <span class="section-eyebrow">Великие имена</span>
+        <h2 class="section-title">Легенды дагестанской музыки</h2>
+        <p class="section-subtitle">Мастера, прославившие культуру Дагестана на весь мир</p>
+
+        <div class="artists-grid">
+            <div class="artist-card reveal">
+                <div class="artist-image-container">
+                    <img loading="lazy" src="images/rasul-gamzatov.jpg" alt="Расул Гамзатов" class="artist-image">
+                    <div class="artist-overlay"></div>
+                </div>
+                <div class="artist-content">
+                    <h3>Расул Гамзатов</h3>
+                    <p class="role">Поэт, автор текстов</p>
+                    <p>Народный поэт Дагестана, чьи стихи легли в основу сотен песен. Его «Журавли» знают во всём мире. Воспел горы, любовь и мир.</p>
+                </div>
+            </div>
+            <div class="artist-card reveal">
+                <div class="artist-image-container">
+                    <img loading="lazy" src="images/suleyman-stalskiy.jpg" alt="Ашуг" class="artist-image">
+                    <div class="artist-overlay"></div>
+                </div>
+                <div class="artist-content">
+                    <h3>Сулейман Стальский</h3>
+                    <p class="role">Народный ашуг</p>
+                    <p>Легендарный лезгинский поэт-певец, которого Горький назвал «Гомером XX века». Исполнял эпические песни под саз, воспевая свободу.</p>
+                </div>
+            </div>
+            <div class="artist-card reveal">
+                <div class="artist-image-container">
+                    <img loading="lazy" src="images/ansambl-lezginka.jpg" alt="Ансамбль" class="artist-image">
+                    <div class="artist-overlay"></div>
+                </div>
+                <div class="artist-content">
+                    <h3>Ансамбль «Лезгинка»</h3>
+                    <p class="role">Государственный ансамбль</p>
+                    <p>Основан в 1958 году. Гастролировал по всему миру, показывая красоту и мощь кавказских танцевальных традиций.</p>
+                </div>
+            </div>
+            <div class="artist-card reveal">
+                <div class="artist-image-container">
+                    <img loading="lazy" src="images/magomed-kasumov.jpg" alt="Зурначи" class="artist-image">
+                    <div class="artist-overlay"></div>
+                </div>
+                <div class="artist-content">
+                    <h3>Магомед Касумов</h3>
+                    <p class="role">Мастер зурны</p>
+                    <p>Виртуоз зурны, чьё мастерство поражает. Его исполнение — эталон для молодых музыкантов. Обучил более 200 учеников по всему Дагестану.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facts-section">
+        <span class="section-eyebrow">В цифрах</span>
+        <h2 class="section-title">Музыкальный Дагестан</h2>
+        <p class="section-subtitle">Факты, которые удивляют</p>
+
+        <div class="facts-grid">
+            <div class="fact-card reveal">
+                <div class="fact-number">01</div>
+                <span class="fact-value">1258 год</span>
+                <p class="fact-label">Первые письменные упоминания о дагестанской музыке встречаются в арабских хрониках XIII века</p>
+            </div>
+            <div class="fact-card reveal">
+                <div class="fact-number">02</div>
+                <span class="fact-value">30+ языков</span>
+                <p class="fact-label">Народные песни Дагестана существуют на более чем тридцати языках — каждый народ поёт на родном</p>
+            </div>
+            <div class="fact-card reveal">
+                <div class="fact-number">03</div>
+                <span class="fact-value">7 дней</span>
+                <p class="fact-label">Традиционная дагестанская свадьба длится семь дней — и всё это время не умолкают музыка и пение</p>
+            </div>
+            <div class="fact-card reveal">
+                <div class="fact-number">04</div>
+                <span class="fact-value">UNESCO</span>
+                <p class="fact-label">Лезгинка и традиционное пандурное исполнительство внесены в список нематериального наследия человечества</p>
+            </div>
+            <div class="fact-card reveal">
+                <div class="fact-number">05</div>
+                <span class="fact-value">3 октавы</span>
+                <p class="fact-label">Диапазон лучших дагестанских певцов — три октавы. Горный воздух и традиция развивают уникальные вокальные данные</p>
+            </div>
+            <div class="fact-card reveal">
+                <div class="fact-number">06</div>
+                <span class="fact-value">1958 год</span>
+                <p class="fact-label">Год основания ансамбля «Лезгинка» — с тех пор он выступил в 60 странах мира, покорив миллионы сердец</p>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+                    </a>
+                    <p>
+                        Культурно-просветительский портал о традициях, обычаях 
+                        и наследии народов Дагестана. Сохраняем прошлое, 
+                        вдохновляем будущее.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="peoples.html">Народы</a></li>
+                        <li><a href="traditions.html">Традиции</a></li>
+                        <li><a href="cuisine.html">Кухня</a></li>
+                        <li><a href="crafts.html">Ремёсла</a></li>
+                        <li><a href="music.html">Музыка</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Интерактив</h4>
+                    <ul>
+                        <li><a href="vr-tour.html">VR-тур 360°</a></li>
+                        <li><a href="sound-map.html">Квиз</a></li>
+                        <li><a href="gallery.html">Маршруты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Подписка</h4>
+                    <form class="footer-subscribe" id="subscribeForm">
+                        <input type="email" placeholder="Ваш email" required aria-label="Email для подписки">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                    <p class="subscribe-msg" id="subscribeMsg" style="display:none;"></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Душа Дагестана. Все права защищены.</p>
+                <p>Сделано с любовью к культуре Кавказа</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const wavesEl = document.getElementById('heroWaves');
+        const waveBars = [];
+        for (let i = 0; i < 100; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'hero-wave-bar';
+            const h = 10 + Math.random() * 130;
+            const dur = 0.5 + Math.random() * 1.8;
+            const delay = Math.random() * 2;
+            bar.style.cssText = `--h:${h}px;--dur:${dur}s;--delay:${delay}s;`;
+            wavesEl.appendChild(bar);
+            waveBars.push(bar);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const rect = wavesEl.getBoundingClientRect();
+            if (e.clientY < rect.top - 100) return;
+            const relX = e.clientX - rect.left;
+            waveBars.forEach((bar, i) => {
+                const barX = (i / waveBars.length) * rect.width;
+                const dist = Math.abs(relX - barX);
+                if (dist < 60) {
+                    bar.classList.add('highlighted');
+                } else {
+                    bar.classList.remove('highlighted');
+                }
+            });
+        });
+
+        const notesBand = document.getElementById('heroNotesBand');
+        const noteSymbols = ['♩', '♪', '♫', '♬', '𝄞', '𝄢', '♭', '♮', '♯'];
+        const noteColors = ['rgba(212,175,55,0.6)', 'rgba(232,200,90,0.5)', 'rgba(247,232,160,0.45)', 'rgba(255,255,255,0.35)'];
+        for (let i = 0; i < 18; i++) {
+            const note = document.createElement('div');
+            note.className = 'hero-note-static';
+            const sym = noteSymbols[Math.floor(Math.random() * noteSymbols.length)];
+            const col = noteColors[Math.floor(Math.random() * noteColors.length)];
+            const left = 2 + Math.random() * 96;
+            const dur = 2.5 + Math.random() * 4;
+            const delay = Math.random() * 5;
+            const rot = -20 + Math.random() * 40;
+            const rot2 = rot + (-15 + Math.random() * 30);
+            const size = 1.1 + Math.random() * 1.2;
+            note.textContent = sym;
+            note.style.cssText = `left:${left}%;--rn-dur:${dur}s;--rn-delay:${delay}s;--rn-rot:${rot}deg;--rn-rot2:${rot2}deg;color:${col};font-size:${size}rem;`;
+            notesBand.appendChild(note);
+        }
+
+        const cursorNoteSymbols = ['♩', '♪', '♫', '♬', '𝄞', '♭', '♮', '♯', '𝄢'];
+        let lastNoteTime = 0;
+        let heroSection = document.querySelector('.hero-section');
+
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastNoteTime < 120) return; 
+            lastNoteTime = now;
+
+            const note = document.createElement('div');
+            note.className = 'music-note-cursor';
+            const sym = cursorNoteSymbols[Math.floor(Math.random() * cursorNoteSymbols.length)];
+            note.textContent = sym;
+            const rot = -25 + Math.random() * 50;
+            const rot2 = rot + (-20 + Math.random() * 40);
+            const dur = 1.4 + Math.random() * 1.2;
+            const offsetX = -20 + Math.random() * 40;
+            const col = noteColors[Math.floor(Math.random() * noteColors.length)];
+            note.style.cssText = `
+                left: ${e.clientX + offsetX}px;
+                bottom: 0;
+                top: auto;
+                position: fixed;
+                color: ${col};
+                --nf-rot: ${rot}deg;
+                --nf-rot2: ${rot2}deg;
+                --nf-dur: ${dur}s;
+                font-size: ${1.0 + Math.random() * 0.8}rem;
+                text-shadow: 0 0 10px rgba(212,175,55,0.5);
+            `;
+            
+            const fromBottom = window.innerHeight - e.clientY;
+            note.style.bottom = fromBottom + 'px';
+
+            document.body.appendChild(note);
+            setTimeout(() => note.remove(), dur * 1000 + 100);
+        });
+
+        const vizEl = document.getElementById('playerViz');
+        const vizBars = [];
+        for (let i = 0; i < 36; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'viz-bar';
+            const h = 8 + Math.random() * 38;
+            const dur = 0.4 + Math.random() * 0.8;
+            const delay = Math.random() * 0.6;
+            bar.style.cssText = `--vh:${h}px;--vd:${dur}s;animation-delay:${delay}s`;
+            vizEl.appendChild(bar);
+            vizBars.push(bar);
+        }
+
+        const tracks = [
+            { src: 'audio/track1.mp3', title: 'Горная песня', artist: 'Аварская народная • Пандур' },
+            { src: 'audio/track2.mp3', title: 'Лезгинка традиционная', artist: 'Инструментальная • Зурна и доол' },
+            { src: 'audio/track3.mp3', title: 'Песня чабана', artist: 'Кумыкская народная • Чунгур и голос' },
+            { src: 'audio/track4.mp3', title: 'Кавказская - Сын Кавказа', artist: 'Анора • Голос' },
+            { src: 'audio/track5.mp3', title: 'Свадебная песня', artist: 'Даргинская народная • Ансамбль' },
+            { src: 'audio/track6.mp3', title: 'Тихо море шумит', artist: 'Магамет Дзыбов • Голос' },
+            { src: 'audio/track7.mp3', title: 'Танец с саблями из балета "Гаянэ"', artist: 'А.Хачатурян • Балет' },
+            { src: 'audio/track8.mp3', title: 'Табасаранская', artist: 'Табасаранская народная • Женский вокал' }
+        ];
+
+        const audio = document.getElementById('mainAudio');
+        const mainPlayBtn = document.getElementById('mainPlayBtn');
+        const progressFill = document.getElementById('progressFill');
+        const progressHandle = document.getElementById('progressHandle');
+        const timeCurrent = document.getElementById('timeCurrent');
+        const timeTotal = document.getElementById('timeTotal');
+        const trackTitle = document.getElementById('currentTrackTitle');
+        const trackArtist = document.getElementById('currentTrackArtist');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeIcon = document.getElementById('volumeIcon');
+        const playlistContainer = document.getElementById('playlistContainer');
+
+        let currentTrackIndex = -1;
+        let isMuted = false;
+        let previousVolume = 70;
+
+        function generatePlaylist() {
+            playlistContainer.innerHTML = '';
+            tracks.forEach((track, index) => {
+                const item = document.createElement('div');
+                item.className = 'playlist-item';
+                item.setAttribute('data-index', index);
+                item.innerHTML = `
+                    <div class="playlist-number">${(index + 1).toString().padStart(2, '0')}</div>
+                    <button class="playlist-play"><i class="fas fa-play"></i></button>
+                    <div class="playlist-info">
+                        <h4>${track.title}</h4>
+                        <p>${track.artist}</p>
+                    </div>
+                    <span class="playlist-duration">--:--</span>
+                `;
+                item.querySelector('.playlist-play').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handlePlaylistItemClick(index);
+                });
+                item.addEventListener('click', (e) => {
+                    if (!e.target.closest('.playlist-play')) handlePlaylistItemClick(index);
+                });
+                playlistContainer.appendChild(item);
+            });
+        }
+
+        function handlePlaylistItemClick(index) {
+            if (index === currentTrackIndex) {
+                audio.paused ? audio.play() : audio.pause();
+            } else {
+                loadTrack(index);
+                audio.play();
+            }
+        }
+
+        function loadTrack(index) {
+            if (index < 0 || index >= tracks.length) return;
+            currentTrackIndex = index;
+            const track = tracks[index];
+            audio.src = track.src;
+            trackTitle.textContent = track.title;
+            trackArtist.textContent = track.artist;
+            updatePlaylistUI();
+            updateButtonStates();
+        }
+
+        function updatePlaylistUI() {
+            document.querySelectorAll('.playlist-item').forEach((item, i) => {
+                const icon = item.querySelector('.playlist-play i');
+                if (i === currentTrackIndex) {
+                    item.classList.add('playing');
+                    icon.className = audio.paused ? 'fas fa-play' : 'fas fa-pause';
+                } else {
+                    item.classList.remove('playing');
+                    icon.className = 'fas fa-play';
+                }
+            });
+        }
+
+        function updateVizState(playing) {
+            vizBars.forEach(b => {
+                if (playing) b.classList.add('playing');
+                else b.classList.remove('playing');
+            });
+        }
+
+        function updateButtonStates() {
+            prevBtn.disabled = currentTrackIndex <= 0;
+            nextBtn.disabled = currentTrackIndex >= tracks.length - 1;
+        }
+
+        function toggleMainPlay() {
+            if (currentTrackIndex === -1) { loadTrack(0); audio.play(); return; }
+            audio.paused ? audio.play() : audio.pause();
+        }
+
+        function playNext() {
+            if (currentTrackIndex < tracks.length - 1) { loadTrack(currentTrackIndex + 1); audio.play(); }
+        }
+
+        function playPrevious() {
+            if (currentTrackIndex > 0) { loadTrack(currentTrackIndex - 1); audio.play(); }
+        }
+
+        function seekTo(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        }
+
+        function changeVolume(value) {
+            audio.volume = value / 100;
+            updateVolumeIcon(value);
+            if (value > 0) isMuted = false;
+        }
+
+        function updateVolumeIcon(value) {
+            if (value == 0 || isMuted) volumeIcon.className = 'fas fa-volume-mute';
+            else if (value < 50) volumeIcon.className = 'fas fa-volume-down';
+            else volumeIcon.className = 'fas fa-volume-up';
+        }
+
+        function toggleMute() {
+            if (isMuted) {
+                audio.volume = previousVolume / 100;
+                volumeSlider.value = previousVolume;
+                isMuted = false;
+            } else {
+                previousVolume = volumeSlider.value;
+                audio.volume = 0;
+                volumeSlider.value = 0;
+                isMuted = true;
+            }
+            updateVolumeIcon(volumeSlider.value);
+        }
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        audio.addEventListener('play', () => {
+            mainPlayBtn.querySelector('i').className = 'fas fa-pause';
+            updateVizState(true);
+            updatePlaylistUI();
+        });
+        audio.addEventListener('pause', () => {
+            mainPlayBtn.querySelector('i').className = 'fas fa-play';
+            updateVizState(false);
+            updatePlaylistUI();
+        });
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const p = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = p + '%';
+                progressHandle.style.left = p + '%';
+                timeCurrent.textContent = formatTime(audio.currentTime);
+            }
+        });
+        audio.addEventListener('loadedmetadata', () => {
+            timeTotal.textContent = formatTime(audio.duration);
+            const item = document.querySelector(`.playlist-item[data-index="${currentTrackIndex}"]`);
+            if (item) item.querySelector('.playlist-duration').textContent = formatTime(audio.duration);
+        });
+        audio.addEventListener('ended', () => {
+            if (currentTrackIndex < tracks.length - 1) playNext();
+            else { mainPlayBtn.querySelector('i').className = 'fas fa-play'; updateVizState(false); updatePlaylistUI(); }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT') return;
+            if (e.code === 'Space') { e.preventDefault(); toggleMainPlay(); }
+            else if (e.code === 'ArrowRight') audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
+            else if (e.code === 'ArrowLeft') audio.currentTime = Math.max(audio.currentTime - 10, 0);
+            else if (e.code === 'ArrowUp') { e.preventDefault(); volumeSlider.value = Math.min(+volumeSlider.value + 10, 100); changeVolume(volumeSlider.value); }
+            else if (e.code === 'ArrowDown') { e.preventDefault(); volumeSlider.value = Math.max(+volumeSlider.value - 10, 0); changeVolume(volumeSlider.value); }
+        });
+
+        document.getElementById('navToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        generatePlaylist();
+        audio.volume = 0.7;
+        updateVolumeIcon(70);
+    </script>
+
+    <script>
+        
+        const subForm = document.getElementById('subscribeForm');
+        if (subForm) {
+            subForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                const msg = document.getElementById('subscribeMsg');
+                if (msg) {
+                    msg.textContent = 'Спасибо за подписку! (' + email + ')';
+                    msg.style.display = 'block';
+                }
+                this.querySelector('input[type="email"]').value = '';
+            });
+        }
+    </script>
+
+    <script>
+        
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        const scrollProgress = document.getElementById('scrollProgress');
+        if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollProgress.style.width = scrollPercent + '%';
+            });
+        }
+
+        const pageTransition = document.getElementById('pageTransition');
+        if (pageTransition) {
+            document.querySelectorAll('a[href]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (!href || href.startsWith('#') || href.startsWith('javascript') || href.startsWith('mailto')) return;
+                    e.preventDefault();
+                    pageTransition.classList.add('active');
+                    setTimeout(() => { window.location.href = href; }, 400);
+                });
+            });
+            
+            window.addEventListener('pageshow', () => {
+                pageTransition.classList.remove('active');
+            });
+        }
+
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

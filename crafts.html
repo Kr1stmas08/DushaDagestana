@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ремёсла Дагестана — кубачинское серебро, табасаранские ковры, балхарская керамика, унцукульская насечка.">
+    <meta name="keywords" content="ремёсла Дагестана, кубачинское серебро, табасаранские ковры, балхарская керамика">
+    <meta name="author" content="Душа Дагестана">
+    <meta property="og:title" content="Ремёсла — Душа Дагестана">
+    <meta property="og:description" content="Ремёсла Дагестана — кубачинское серебро, табасаранские ковры, балхарская керамика, унцукульская насечка.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z' fill='%23D4AF37'/></svg>">
+    <title>Ремёсла — Душа Дагестана</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --emerald: #2C5F4F;
+            --emerald-dark: #1a3d32;
+            --emerald-bright: #3d8c70;
+            --gold: #D4AF37;
+            --gold-light: #f0cc5c;
+            --gold-pale: #f7e8a0;
+            --stone: #E8DCC4;
+            --terracotta: #B85042;
+            --terracotta-bright: #d4604f;
+            --night: #0A1128;
+            --night-light: #151d3b;
+            --cream: #FAF7F2;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --ruby: #8B1A1A;
+            
+            --font-display: 'Cinzel', serif;
+            --font-serif: 'Playfair Display', serif;
+            --font-body: 'Cormorant+Garamond', serif;
+            
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0.8rem 5%;
+            background: rgba(10, 17, 40, 0.97);
+            backdrop-filter: blur(30px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212,175,55,0.25);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--gold);
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212,175,55,0.3);
+        }
+
+        .logo-text span { color: var(--gold); }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.75);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            outline: none;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .page-header {
+            padding: 180px 5% 120px;
+            text-align: center;
+            background: linear-gradient(160deg, #060d20 0%, #0e2318 40%, #1a3d32 70%, #0a1128 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(44,95,79,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(184,80,66,0.1) 0%, transparent 60%);
+        }
+
+        .header-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.07;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,175,55,0.5) 40px, rgba(212,175,55,0.5) 41px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,175,55,0.5) 40px, rgba(212,175,55,0.5) 41px);
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
+        .header-orb {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.2);
+            animation: orbPulse 6s ease-in-out infinite;
+        }
+
+        .header-orb:nth-child(1) { width: 400px; height: 400px; top: -100px; left: -100px; animation-delay: 0s; }
+        .header-orb:nth-child(2) { width: 600px; height: 600px; bottom: -200px; right: -150px; animation-delay: 2s; }
+        .header-orb:nth-child(3) { width: 200px; height: 200px; top: 50%; right: 10%; animation-delay: 4s; }
+
+        @keyframes orbPulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        .floating-gem {
+            position: absolute;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(10deg); }
+            66% { transform: translateY(10px) rotate(-5deg); }
+        }
+
+        .header-eyebrow {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInDown 1s ease 0.2s forwards;
+        }
+
+        .header-eyebrow::before,
+        .header-eyebrow::after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            position: relative;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .page-header h1 .gold { 
+            color: var(--gold);
+            display: block;
+            text-shadow: 0 0 40px rgba(212,175,55,0.4);
+        }
+
+        .page-header p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .header-scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.4);
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(180deg, var(--gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { transform: scaleY(1); opacity: 1; }
+            50% { transform: scaleY(0.5); opacity: 0.3; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ornament-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .ornament-divider::before,
+        .ornament-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .ornament-diamond {
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 10px rgba(212,175,55,0.5);
+        }
+
+        .intro-section {
+            padding: 100px 5%;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--emerald), var(--gold), var(--terracotta), var(--gold), var(--emerald));
+        }
+
+        .intro-bg-text {
+            position: absolute;
+            font-family: var(--font-display);
+            font-size: 20vw;
+            font-weight: 900;
+            color: rgba(44,95,79,0.03);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-eyebrow {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            color: var(--night);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .intro-content > p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 70px;
+        }
+
+        .stat-card {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--night) 0%, var(--night-light) 100%);
+            border-radius: var(--radius-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+            border: 1px solid rgba(212,175,55,0.15);
+            cursor: default;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212,175,55,0.4);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 30px rgba(212,175,55,0.1);
+        }
+
+        .stat-card:hover::after { opacity: 1; }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: block;
+            filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+        }
+
+        .stat-card .number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(212,175,55,0.3);
+        }
+
+        .stat-card .label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .crafts-section {
+            padding: 120px 5%;
+            background: linear-gradient(180deg, #f0e8d8 0%, #e8dcc4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .crafts-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.08'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .crafts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 45px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .craft-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .craft-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(212,175,55,0), rgba(212,175,55,0.5), rgba(212,175,55,0)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .craft-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2), 0 0 60px rgba(212,175,55,0.1);
+        }
+
+        .craft-card:hover::before { opacity: 1; }
+
+        .craft-image-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .craft-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+            filter: saturate(1.1);
+        }
+
+        .craft-card:hover .craft-image {
+            transform: scale(1.18);
+        }
+
+        .craft-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,17,40,0.95) 0%, rgba(10,17,40,0.4) 50%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 28px;
+        }
+
+        .craft-badge {
+            padding: 8px 18px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--night);
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+        }
+
+        .craft-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.08);
+            line-height: 1;
+        }
+
+        .craft-content {
+            padding: 35px;
+        }
+
+        .craft-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--night);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .craft-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--emerald);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .craft-location i { font-size: 0.85rem; }
+
+        .craft-description {
+            color: #666;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .craft-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .craft-tag {
+            padding: 6px 16px;
+            background: linear-gradient(135deg, rgba(44,95,79,0.08), rgba(44,95,79,0.12));
+            color: var(--emerald);
+            border: 1px solid rgba(44,95,79,0.2);
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .craft-card:hover .craft-tag {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(212,175,55,0.2));
+            color: #8a6d00;
+            border-color: rgba(212,175,55,0.4);
+        }
+
+        .masters-section {
+            padding: 120px 5%;
+            background: linear-gradient(160deg, var(--night) 0%, #0d1f3c 40%, var(--night-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .masters-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(44,95,79,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(212,175,55,0.1) 0%, transparent 50%);
+        }
+
+        .masters-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23D4AF37' stroke-opacity='0.04' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23D4AF37' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .masters-section .section-title {
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .master-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: var(--radius-lg);
+            padding: 50px 30px 40px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .master-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 0 0 4px 4px;
+        }
+
+        .master-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .master-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(212,175,55,0.4);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 40px rgba(212,175,55,0.1);
+        }
+
+        .master-card:hover::after { opacity: 1; }
+
+        .master-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--emerald-dark), var(--emerald-bright));
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 30px rgba(44,95,79,0.3);
+            border: 2px solid rgba(212,175,55,0.3);
+            position: relative;
+        }
+
+        .master-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+
+        .master-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .master-card .specialty {
+            color: rgba(255,255,255,0.5);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .master-card p {
+            color: rgba(255,255,255,0.8);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-section {
+            padding: 120px 5%;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section::before {
+            content: 'КИНЖАЛ';
+            position: absolute;
+            font-family: var(--font-display);
+            font-size: 15vw;
+            font-weight: 900;
+            color: rgba(44,95,79,0.03);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-timeline {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--emerald) 0%, var(--gold) 50%, var(--terracotta) 100%);
+            opacity: 0.3;
+        }
+
+        .process-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 40px;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-number {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--emerald-dark), var(--emerald));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            box-shadow: 0 10px 40px rgba(44,95,79,0.35), 0 0 0 6px rgba(44,95,79,0.1);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(212,175,55,0.3);
+        }
+
+        .process-item:hover .process-number {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(44,95,79,0.5), 0 0 0 10px rgba(44,95,79,0.08);
+        }
+
+        .process-content {
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+
+        .process-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--night);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .process-content p {
+            color: #666;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .gallery-section {
+            padding: 120px 5%;
+            background: var(--night);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 0% 100%, rgba(44,95,79,0.1) 0%, transparent 50%);
+        }
+
+        .gallery-section .section-title { color: var(--white); }
+
+        .gallery-hint {
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .gallery-hint i { color: var(--gold); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 260px;
+            gap: 16px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(212,175,55,0.15);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: saturate(1.15) brightness(0.9);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+            filter: saturate(1.3) brightness(1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,17,40,0.95) 0%, rgba(10,17,40,0.3) 50%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 60px;
+            height: 60px;
+            background: rgba(212,175,55,0.2);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .gallery-item:hover .gallery-overlay-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery-caption {
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .quote-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--emerald-dark) 0%, var(--emerald) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .quote-section::before {
+            content: '❝';
+            position: absolute;
+            font-size: 30vw;
+            color: rgba(255,255,255,0.03);
+            top: -5vw;
+            left: 0;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--white);
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            position: relative;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .quote-author {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--night);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right var(--transition-normal);
+                z-index: 999;
+                border-left: 1px solid rgba(212,175,55,0.15);
+            }
+
+            .nav-menu.active { right: 0; }
+            .nav-toggle { display: flex; }
+
+            .crafts-grid { grid-template-columns: 1fr; }
+
+            .process-item {
+                grid-template-columns: 80px 1fr;
+                gap: 25px;
+            }
+
+            .process-number {
+                width: 80px;
+                height: 80px;
+                font-size: 1.6rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .intro-stats { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item { height: 250px; }
+
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.97);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: lightboxZoom 0.4s ease;
+        }
+
+        @keyframes lightboxZoom {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.8), 0 0 60px rgba(212,175,55,0.1);
+        }
+
+        .lightbox-caption {
+            margin-top: 20px;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .lightbox-counter {
+            margin-top: 10px;
+            color: rgba(255,255,255,0.4);
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            color: var(--white);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--night);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close { top: 30px; right: 30px; }
+        .lightbox-prev { left: 30px; top: 50%; transform: translateY(-50%); }
+        .lightbox-prev:hover { transform: translateY(-50%) scale(1.1); }
+        .lightbox-next { right: 30px; top: 50%; transform: translateY(-50%); }
+        .lightbox-next:hover { transform: translateY(-50%) scale(1.1); }
+
+        .lightbox::after {
+            content: 'ESC — закрыть  ·  ← → — навигация';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.3);
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        body.lightbox-open { overflow: hidden; }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            padding: 12px 24px;
+            z-index: 10001;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            border-radius: 0 0 8px 8px;
+            transition: top 0.3s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        footer {
+            background: #050810;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(212,175,55,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white, #fff);
+            transition: 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--gold, #D4AF37);
+            border-color: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+        }
+
+        .footer-column h4 {
+            color: var(--white, #fff);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.6);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            transition: 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold, #D4AF37);
+            padding-left: 5px;
+        }
+
+        .footer-subscribe input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white, #fff);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe input:focus {
+            outline: none;
+            border-color: var(--gold, #D4AF37);
+        }
+
+        .footer-subscribe input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-subscribe button {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold, #D4AF37);
+            border: none;
+            border-radius: 8px;
+            color: var(--night, #0A1128);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .footer-subscribe button:hover {
+            background: var(--gold-light, #e8c85a);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        .subscribe-msg {
+            color: #e8c85a;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold, #D4AF37);
+            color: var(--night, #0A1128);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease;
+            z-index: 900;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--gold-light, #e8c85a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold, #D4AF37), var(--gold-light, #e8c85a));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: var(--night, #0A1128);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            pointer-events: none;
+        }
+        .page-transition.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .back-to-top { transition: none; }
+            .page-transition { transition: none; }
+        }
+
+        @media print {
+            .navbar, .back-to-top, .scroll-progress, .page-transition,
+            .preloader, .hero-scroll, .skip-link, .footer-social,
+            .footer-subscribe, .nav-toggle { display: none !important; }
+            body { background: #fff; color: #000; font-size: 12pt; }
+            footer { background: #fff; color: #333; border-top: 1px solid #ccc; padding: 20px 0; }
+            footer a { color: #333; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+            .culture-card, .story-image img, img { break-inside: avoid; }
+        }
+
+        .logo {
+            position: relative;
+        }
+        .logo-text {
+            transition: all 0.3s ease;
+        }
+        .logo:hover .logo-text {
+            text-shadow: 0 0 30px rgba(212,175,55,0.6), 0 0 60px rgba(212,175,55,0.2);
+        }
+        .logo:hover .logo-icon {
+            filter: drop-shadow(0 0 12px rgba(212,175,55,0.8));
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5) 20%, rgba(212,175,55,0.8) 50%, rgba(212,175,55,0.5) 80%, transparent);
+            opacity: 0.6;
+        }
+
+        ::selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+        ::-moz-selection {
+            background: rgba(212,175,55,0.25);
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--night, #0A1128);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold, #D4AF37), var(--emerald, #2C5F4F));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--gold-light, #e8c85a), var(--emerald, #2C5F4F));
+        }
+        html {
+            scrollbar-color: var(--gold, #D4AF37) var(--night, #0A1128);
+            scrollbar-width: thin;
+        }
+
+        .stat-number, .hero-stat-number {
+            position: relative;
+        }
+        @keyframes statGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(212,175,55,0.3); }
+            50% { text-shadow: 0 0 40px rgba(212,175,55,0.6), 0 0 80px rgba(212,175,55,0.2); }
+        }
+        .stat-number:hover, .hero-stat-number:hover {
+            animation: statGlow 2s ease-in-out infinite;
+        }
+
+        .story-quote::before,
+        .intro-quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--gold, #D4AF37);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37) 30%, var(--gold, #D4AF37) 70%, transparent);
+        }
+        footer::after {
+            content: '◆';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold, #D4AF37);
+            font-size: 0.7rem;
+            background: #050810;
+            padding: 0 12px;
+        }
+        footer {
+            position: relative;
+        }
+
+        .footer-column a {
+            position: relative;
+            display: inline-block;
+        }
+        .footer-column a::before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            color: var(--gold, #D4AF37);
+            transition: all 0.2s ease;
+            font-size: 0.8em;
+        }
+        .footer-column a:hover::before {
+            opacity: 1;
+            left: -18px;
+        }
+
+        .story-image img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
+        }
+        .story-image:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.05) contrast(1.02);
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            gap: 20px;
+            opacity: 0.5;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            max-width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold, #D4AF37));
+        }
+        .section-divider::after {
+            background: linear-gradient(90deg, var(--gold, #D4AF37), transparent);
+        }
+        .section-divider svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold, #D4AF37);
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти к содержимому</a>
+        <div class="page-transition" id="pageTransition"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" role="navigation" aria-label="Основная навигация">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40">
+                    <path d="M20 5 L35 15 L35 30 L20 35 L5 30 L5 15 Z"/>
+                </svg>
+                <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="peoples.html">Народы</a></li>
+                <li><a href="traditions.html">Традиции</a></li>
+                <li><a href="cuisine.html">Кухня</a></li>
+                <li><a href="crafts.html" class="active">Ремёсла</a></li>
+                <li><a href="music.html">Музыка</a></li>
+                <li><a href="vr-tour.html">VR-тур</a></li>
+                <li><a href="sound-map.html">Квиз</a></li>
+                <li><a href="gallery.html">Маршруты</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main role="main">
+    
+    <header class="page-header">
+        <div class="header-pattern"></div>
+        <div class="header-orb"></div>
+        <div class="header-orb"></div>
+        <div class="header-orb"></div>
+
+        <svg class="floating-gem" style="top:15%;left:8%;animation-delay:0s" width="30" height="30" viewBox="0 0 30 30">
+            <polygon points="15,0 30,15 15,30 0,15" fill="none" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+        </svg>
+        <svg class="floating-gem" style="top:70%;left:5%;animation-delay:2s" width="20" height="20" viewBox="0 0 20 20">
+            <polygon points="10,0 20,10 10,20 0,10" fill="rgba(212,175,55,0.1)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+        </svg>
+        <svg class="floating-gem" style="top:20%;right:8%;animation-delay:1s" width="40" height="40" viewBox="0 0 40 40">
+            <polygon points="20,0 40,20 20,40 0,20" fill="none" stroke="rgba(44,95,79,0.4)" stroke-width="1"/>
+        </svg>
+        <svg class="floating-gem" style="top:60%;right:6%;animation-delay:3s" width="25" height="25" viewBox="0 0 25 25">
+            <polygon points="12.5,0 25,12.5 12.5,25 0,12.5" fill="rgba(212,175,55,0.05)" stroke="rgba(212,175,55,0.35)" stroke-width="1"/>
+        </svg>
+
+        <div class="header-eyebrow">
+            <span></span>
+            Наследие тысячелетий
+            <span></span>
+        </div>
+        <h1>
+            Золотые руки:
+            <span class="gold">Мастера Дагестана</span>
+        </h1>
+        <p>Древние ремёсла, передаваемые из поколения в поколение — от ювелиров Кубачи до гончаров Балхара</p>
+
+        <div class="header-scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Листать</span>
+        </div>
+    </header>
+
+    <section class="intro-section">
+        <div class="intro-bg-text">РЕМЁСЛА</div>
+        <div class="intro-content">
+            <span class="section-eyebrow reveal">Философия Мастерства</span>
+            <h2 class="section-title reveal">Искусство в каждом движении</h2>
+            
+            <div class="ornament-divider reveal">
+                <div class="ornament-diamond"></div>
+                <div class="ornament-diamond" style="width:6px;height:6px;opacity:0.5;"></div>
+                <div class="ornament-diamond"></div>
+            </div>
+
+            <p class="reveal reveal-delay-1">
+                Дагестанские ремёсла — это не просто способ заработка, это философия жизни, 
+                передающаяся через века. Каждое изделие несёт в себе душу мастера, мудрость предков 
+                и тысячелетнюю историю народа.
+            </p>
+            <p class="reveal reveal-delay-2">
+                Здесь нет массового производства — только ручная работа, где каждое движение выверено 
+                до миллиметра, а каждый орнамент имеет своё значение. Дагестанские мастера создают 
+                не вещи, а произведения искусства.
+            </p>
+
+            <div class="intro-stats">
+                <div class="stat-card reveal reveal-delay-1">
+                    <i class="fas fa-award"></i>
+                    <div class="number">15+</div>
+                    <div class="label">Видов ремёсел</div>
+                </div>
+                <div class="stat-card reveal reveal-delay-2">
+                    <i class="fas fa-users"></i>
+                    <div class="number">5000+</div>
+                    <div class="label">Мастеров</div>
+                </div>
+                <div class="stat-card reveal reveal-delay-3">
+                    <i class="fas fa-history"></i>
+                    <div class="number">2000+</div>
+                    <div class="label">Лет истории</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="crafts-section">
+        <span class="section-eyebrow reveal" style="display:block;text-align:center;margin-bottom:10px;">Традиционные промыслы</span>
+        <h2 class="section-title reveal">Легендарные ремёсла</h2>
+        <div class="ornament-divider reveal" style="max-width:400px;margin:0 auto 80px;">
+            <div class="ornament-diamond"></div>
+            <div class="ornament-diamond" style="width:6px;height:6px;opacity:0.5;"></div>
+            <div class="ornament-diamond"></div>
+        </div>
+        
+        <div class="crafts-grid">
+            
+            <div class="craft-card reveal">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/kubachinskoe-serebro.jpg" alt="Кубачинское серебро" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">ЮНЕСКО</span>
+                    </div>
+                    <div class="craft-number">01</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Кубачинское серебро</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Село Кубачи, Дахадаевский район</span>
+                    </div>
+                    <p class="craft-description">
+                        Кубачинские мастера — легендарные ювелиры, чьё искусство известно с XIII века. 
+                        Они создают ажурные изделия из серебра с гравировкой, чернением и золочением. 
+                        Кубачинские кинжалы, браслеты и посуда украшали дворцы от Персии до Османской империи.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Ювелирное дело</span>
+                        <span class="craft-tag">Чернение</span>
+                        <span class="craft-tag">Гравировка</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="craft-card reveal reveal-delay-1">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/uncukulskaya-nasechka.jpg" alt="Унцукульская насечка" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">Уникальная техника</span>
+                    </div>
+                    <div class="craft-number">02</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Унцукульская насечка</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Село Унцукуль, Унцукульский район</span>
+                    </div>
+                    <p class="craft-description">
+                        Резьба по дереву с инкрустацией серебром, перламутром и латунью. Мастера 
+                        создают трости, шкатулки, вазы, покрытые тончайшими узорами. Один орнамент 
+                        может содержать до 10 000 мельчайших элементов.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Резьба по дереву</span>
+                        <span class="craft-tag">Инкрустация</span>
+                        <span class="craft-tag">Перламутр</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="craft-card reveal reveal-delay-2">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/balharskaya-keramika.jpg" alt="Балхарская керамика" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">Женское ремесло</span>
+                    </div>
+                    <div class="craft-number">03</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Балхарская керамика</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Село Балхар, Акушинский район</span>
+                    </div>
+                    <p class="craft-description">
+                        Единственное в Дагестане село, где гончарством занимаются исключительно женщины. 
+                        Мастерицы лепят кувшины, вазы, игрушки без гончарного круга — только руками. 
+                        Секрет белой глины передаётся от матери к дочери более 400 лет.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Керамика</span>
+                        <span class="craft-tag">Ручная лепка</span>
+                        <span class="craft-tag">Роспись</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="craft-card reveal">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/tabasaranskie-kovri.jpg" alt="Табасаранские ковры" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">Книга Гиннесса</span>
+                    </div>
+                    <div class="craft-number">04</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Табасаранские ковры</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Табасаранский район</span>
+                    </div>
+                    <p class="craft-description">
+                        Самые сложные по орнаменту ковры в мире — занесены в Книгу рекордов Гиннесса. 
+                        Плотность плетения достигает 140 узлов на квадратный дециметр. Один ковёр 
+                        размером 2×3 метра мастерица ткёт около года.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Ковроткачество</span>
+                        <span class="craft-tag">Ручная работа</span>
+                        <span class="craft-tag">140 узлов</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="craft-card reveal reveal-delay-1">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/ahtinskaya-mednaya-posuda.jpg" alt="Ахтынская медь" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">Древнейшее ремесло</span>
+                    </div>
+                    <div class="craft-number">05</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Ахтынская медная посуда</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Село Ахты, Ахтынский район</span>
+                    </div>
+                    <p class="craft-description">
+                        Изготовление медной посуды методом чеканки — кувшины, кастрюли, самовары. 
+                        Мастера куют медь вручную, покрывая её орнаментами через технику выдавливания. 
+                        Ахтынская медная посуда служит веками.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Медночеканка</span>
+                        <span class="craft-tag">Ковка</span>
+                        <span class="craft-tag">Лужение</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="craft-card reveal reveal-delay-2">
+                <div class="craft-image-container">
+                    <img loading="lazy" src="images/derbentskie-kovri.jpg" alt="Дербентское ковроткачество" class="craft-image">
+                    <div class="craft-overlay">
+                        <span class="craft-badge">Персидские мотивы</span>
+                    </div>
+                    <div class="craft-number">06</div>
+                </div>
+                <div class="craft-content">
+                    <h3>Дербентские ковры</h3>
+                    <div class="craft-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Дербент</span>
+                    </div>
+                    <p class="craft-description">
+                        Ковроткачество Дербента сочетает персидские, азербайджанские и дагестанские 
+                        традиции. Мастерицы используют растительные красители — марену, индиго, шафран. 
+                        Характерны медальонные композиции и растительные орнаменты.
+                    </p>
+                    <div class="craft-features">
+                        <span class="craft-tag">Ковроткачество</span>
+                        <span class="craft-tag">Растительные краски</span>
+                        <span class="craft-tag">Медальоны</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <p class="quote-text reveal">
+            «Когда мастер работает с серебром, он не просто придаёт форму металлу — 
+            он вкладывает в него частицу своей души, и та остаётся там навсегда»
+        </p>
+        <div class="quote-author reveal">— Народная мудрость Кубачи</div>
+    </section>
+
+    <section class="masters-section">
+        <span class="section-eyebrow reveal" style="display:block;text-align:center;margin-bottom:10px;position:relative;z-index:1;">Хранители традиций</span>
+        <h2 class="section-title reveal">Народные мастера</h2>
+        <div class="ornament-divider reveal" style="max-width:400px;margin:0 auto 80px;position:relative;z-index:1;">
+            <div class="ornament-diamond"></div>
+            <div class="ornament-diamond" style="width:6px;height:6px;opacity:0.5;"></div>
+            <div class="ornament-diamond"></div>
+        </div>
+        
+        <div class="masters-grid">
+            <div class="master-card reveal">
+                <div class="master-avatar">РА</div>
+                <h3>Расул Алиханов</h3>
+                <p class="specialty">Кубачинское серебро</p>
+                <p>
+                    Заслуженный художник России. Мастер филигранной работы, создатель уникальной 
+                    техники трёхмерной гравировки. Его кинжалы находятся в коллекциях Эрмитажа 
+                    и Оружейной палаты.
+                </p>
+            </div>
+
+            <div class="master-card reveal reveal-delay-1">
+                <div class="master-avatar">ЗГ</div>
+                <h3>Зулайхат Гасанова</h3>
+                <p class="specialty">Балхарская керамика</p>
+                <p>
+                    Народный мастер Дагестана. Хранительница древних секретов белой глины. 
+                    Её изделия экспонировались на выставках в Париже, Лондоне, Токио. 
+                    Обучила ремеслу более 50 учениц.
+                </p>
+            </div>
+
+            <div class="master-card reveal reveal-delay-2">
+                <div class="master-avatar">МИ</div>
+                <h3>Магомед Ибрагимов</h3>
+                <p class="specialty">Унцукульская насечка</p>
+                <p>
+                    Лауреат Государственной премии РФ. Возродил технику инкрустации перламутром 
+                    по горячему дереву. Создал авторскую коллекцию из 300 уникальных тростей 
+                    с портретами исторических личностей.
+                </p>
+            </div>
+
+            <div class="master-card reveal reveal-delay-3">
+                <div class="master-avatar">ПМ</div>
+                <h3>Патимат Магомедова</h3>
+                <p class="specialty">Табасаранские ковры</p>
+                <p>
+                    Мастер высшей категории. Создала ковёр с плотностью 160 узлов — мировой рекорд. 
+                    Её работы приобретают коллекционеры из 15 стран мира. За 40 лет соткала 87 ковров.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <span class="section-eyebrow reveal" style="display:block;text-align:center;margin-bottom:10px;">Шаг за шагом</span>
+        <h2 class="section-title reveal">Рождение шедевра: Кубачинский кинжал</h2>
+        <div class="ornament-divider reveal" style="max-width:400px;margin:0 auto 80px;">
+            <div class="ornament-diamond"></div>
+            <div class="ornament-diamond" style="width:6px;height:6px;opacity:0.5;"></div>
+            <div class="ornament-diamond"></div>
+        </div>
+        
+        <div class="process-container">
+            <div class="process-timeline"></div>
+
+            <div class="process-item reveal">
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>Ковка клинка</h3>
+                    <p>
+                        Мастер-кузнец куёт клинок из дамасской стали, нагревая металл до 1200°C. 
+                        Многократная проковка создаёт характерный узор из тысяч слоёв. Процесс 
+                        занимает 3-4 дня. Готовый клинок закаляют в родниковой воде.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item reveal reveal-delay-1">
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>Создание рукояти</h3>
+                    <p>
+                        Рукоять вырезают из рога буйвола, кости или ценных пород дерева. 
+                        Форму подгоняют под руку заказчика. Затем поверхность шлифуют до 
+                        идеальной гладкости и полируют специальными составами.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item reveal reveal-delay-2">
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>Изготовление металлических деталей</h3>
+                    <p>
+                        Ювелир создаёт гарду, навершие, обкладки из серебра высшей пробы. 
+                        Каждая деталь покрывается гравировкой с растительным или геометрическим 
+                        орнаментом. На один элемент уходит до 40 часов работы.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item reveal reveal-delay-3">
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>Чернение и золочение</h3>
+                    <p>
+                        Углублённые участки орнамента заполняют чернью — сплавом серебра, 
+                        меди, серы и свинца. Выступающие части покрывают сусальным золотом. 
+                        Контраст создаёт объёмный рисунок.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item reveal">
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3>Сборка и финальная полировка</h3>
+                    <p>
+                        Мастер собирает все элементы на специальный клей и металлические штифты. 
+                        Затем кинжал полируют войлоком с пастой ГОИ до зеркального блеска. 
+                        Последний штрих — нанесение клейма мастера.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <span class="section-eyebrow reveal" style="display:block;text-align:center;margin-bottom:10px;position:relative;z-index:1;color:var(--gold);">Мастерство в кадре</span>
+        <h2 class="section-title reveal" style="position:relative;z-index:1;">Галерея мастерства</h2>
+        <div class="ornament-divider reveal" style="max-width:400px;margin:0 auto 20px;position:relative;z-index:1;">
+            <div class="ornament-diamond"></div>
+            <div class="ornament-diamond" style="width:6px;height:6px;opacity:0.5;"></div>
+            <div class="ornament-diamond"></div>
+        </div>
+        <p class="gallery-hint reveal">
+            <i class="fas fa-hand-pointer"></i> 
+            Кликните на изображение для полноэкранного просмотра
+        </p>
+    
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-kubachinskiy-kinjal.jpg" alt="Серебряный кинжал">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Кубачинский кинжал XVIII века</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-uncukulskaya-shkatulka.jpg" alt="Резная шкатулка">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Унцукульская шкатулка с инкрустацией</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-balharskiy-kuvshin.jpg" alt="Керамический кувшин">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Балхарский кувшин с росписью</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-tabasarankiy-kover.jpg" alt="Фрагмент ковра">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Табасаранский ковёр, 140 узлов</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-ahtinskaya-mednaya-posuda.jpg" alt="Медный кувшин">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Ахтынская медная посуда</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-master-serebra.jpg" alt="Мастер за работой">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Мастер за гравировкой серебра</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-kubachinskaya-chasha.jpg" alt="Серебряная чаша">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Кубачинская чаша с чернением</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img loading="lazy" src="images/item-uncukulskaya-trost.jpg" alt="Деревянная трость">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-icon"><i class="fas fa-expand"></i></div>
+                    <div class="gallery-caption">Унцукульская трость с серебром</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <button class="back-to-top" id="backToTop" aria-label="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">ДАГЕ<span>СТАН</span></span>
+                    </a>
+                    <p>
+                        Культурно-просветительский портал о традициях, обычаях 
+                        и наследии народов Дагестана. Сохраняем прошлое, 
+                        вдохновляем будущее.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="peoples.html">Народы</a></li>
+                        <li><a href="traditions.html">Традиции</a></li>
+                        <li><a href="cuisine.html">Кухня</a></li>
+                        <li><a href="crafts.html">Ремёсла</a></li>
+                        <li><a href="music.html">Музыка</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Интерактив</h4>
+                    <ul>
+                        <li><a href="vr-tour.html">VR-тур 360°</a></li>
+                        <li><a href="sound-map.html">Квиз</a></li>
+                        <li><a href="gallery.html">Маршруты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Подписка</h4>
+                    <form class="footer-subscribe" id="subscribeForm">
+                        <input type="email" placeholder="Ваш email" required aria-label="Email для подписки">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                    <p class="subscribe-msg" id="subscribeMsg" style="display:none;"></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Душа Дагестана. Все права защищены.</p>
+                <p>Сделано с любовью к культуре Кавказа</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" onclick="changeLightboxImage(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" onclick="changeLightboxImage(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage" style="transition: opacity 0.2s ease;">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 60;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 0.5,
+                speedX: (Math.random() - 0.5) * 0.3,
+                speedY: (Math.random() - 0.5) * 0.3,
+                opacity: Math.random() * 0.5 + 0.1,
+                color: Math.random() > 0.5 ? '212,175,55' : '44,95,79'
+            });
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${p.color},${p.opacity})`;
+                ctx.fill();
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        document.getElementById('navToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        function animateCounter(el, target) {
+            let current = 0;
+            const increment = target / 60;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                const suffix = el.dataset.suffix || '';
+                el.textContent = Math.floor(current) + suffix;
+            }, 16);
+        }
+
+        const statNumbers = document.querySelectorAll('.stat-card .number');
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const text = el.textContent;
+                    const num = parseInt(text.replace(/\D/g, ''));
+                    const suffix = text.replace(/[0-9]/g, '');
+                    el.dataset.suffix = suffix;
+                    animateCounter(el, num);
+                    statObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(n => statObserver.observe(n));
+
+        let currentImageIndex = 0;
+        const galleryImages = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach((item, index) => {
+                const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption');
+                
+                galleryImages.push({
+                    src: img.src.replace('w=600', 'w=1400').replace('w=800', 'w=1400'),
+                    alt: img.alt,
+                    caption: caption ? caption.textContent.trim() : ''
+                });
+
+                item.addEventListener('click', () => openLightbox(index));
+            });
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            const image = galleryImages[currentImageIndex];
+            
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = image.caption;
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+            
+            lightbox.classList.add('active');
+            document.body.classList.add('lightbox-open');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        function changeLightboxImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+            
+            const lightboxImage = document.getElementById('lightboxImage');
+            const image = galleryImages[currentImageIndex];
+            
+            lightboxImage.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                document.getElementById('lightboxCaption').textContent = image.caption;
+                document.getElementById('lightboxCounter').textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+                lightboxImage.style.opacity = '1';
+            }, 150);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+            if (e.key === 'ArrowRight') changeLightboxImage(1);
+        });
+
+        document.getElementById('lightbox')?.addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        let touchStartX = 0;
+        document.getElementById('lightbox')?.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+        document.getElementById('lightbox')?.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) changeLightboxImage(diff > 0 ? 1 : -1);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+
+    <script>
+        
+        const subForm = document.getElementById('subscribeForm');
+        if (subForm) {
+            subForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                const msg = document.getElementById('subscribeMsg');
+                if (msg) {
+                    msg.textContent = 'Спасибо за подписку! (' + email + ')';
+                    msg.style.display = 'block';
+                }
+                this.querySelector('input[type="email"]').value = '';
+            });
+        }
+    </script>
+
+    <script>
+        
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        const scrollProgress = document.getElementById('scrollProgress');
+        if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                scrollProgress.style.width = scrollPercent + '%';
+            });
+        }
+
+        const pageTransition = document.getElementById('pageTransition');
+        if (pageTransition) {
+            document.querySelectorAll('a[href]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (!href || href.startsWith('#') || href.startsWith('javascript') || href.startsWith('mailto')) return;
+                    e.preventDefault();
+                    pageTransition.classList.add('active');
+                    setTimeout(() => { window.location.href = href; }, 400);
+                });
+            });
+            
+            window.addEventListener('pageshow', () => {
+                pageTransition.classList.remove('active');
+            });
+        }
+
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
